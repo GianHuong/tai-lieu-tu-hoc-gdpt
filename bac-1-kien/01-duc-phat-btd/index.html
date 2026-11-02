@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bi Trí Dũng – Bậc Kiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,500&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EF;
+  --bg-card:#FFFDF8;
+  --ink:#3E3A34;
+  --ink-soft:#6E6759;
+  --ink-faint:#9A927F;
+  --border:#EFE3D0;
+  --sage:#8FB988;
+  --sage-ink:#3E5C3B;
+  --sage-bg:#E8F1E4;
+  --lotus:#E8A3B0;
+  --lotus-ink:#7A3A44;
+  --lotus-bg:#FBE7EA;
+  --saffron:#E7BA53;
+  --saffron-ink:#6B5220;
+  --saffron-bg:#FBF0D9;
+  --sky:#93BEDB;
+  --sky-ink:#2E5470;
+  --sky-bg:#E5F0F7;
+  --shadow: 0 2px 10px rgba(62,58,52,0.06), 0 1px 2px rgba(62,58,52,0.05);
+  --radius: 18px;
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) { }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#211E1A;
+    --bg-card:#2A2620;
+    --ink:#F1EAD9;
+    --ink-soft:#C9BFA9;
+    --ink-faint:#938972;
+    --border:#3C362C;
+    --sage:#9DC896;
+    --sage-ink:#DDF0D7;
+    --sage-bg:#31402E;
+    --lotus:#EDB2BE;
+    --lotus-ink:#F7DEE2;
+    --lotus-bg:#402B30;
+    --saffron:#EFC46B;
+    --saffron-ink:#F8E6BC;
+    --saffron-bg:#453A22;
+    --sky:#A4CBE3;
+    --sky-ink:#DDEEF7;
+    --sky-bg:#28384A;
+    --shadow: 0 2px 14px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#211E1A;
+  --bg-card:#2A2620;
+  --ink:#F1EAD9;
+  --ink-soft:#C9BFA9;
+  --ink-faint:#938972;
+  --border:#3C362C;
+  --sage:#9DC896;
+  --sage-ink:#DDF0D7;
+  --sage-bg:#31402E;
+  --lotus:#EDB2BE;
+  --lotus-ink:#F7DEE2;
+  --lotus-bg:#402B30;
+  --saffron:#EFC46B;
+  --saffron-ink:#F8E6BC;
+  --saffron-bg:#453A22;
+  --sky:#A4CBE3;
+  --sky-ink:#DDEEF7;
+  --sky-bg:#28384A;
+  --shadow: 0 2px 14px rgba(0,0,0,0.35);
+  color-scheme: dark;
+}
+*{box-sizing:border-box;}
+html{scroll-padding-top: calc(84px + env(safe-area-inset-top,0px));}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Be Vietnam Pro', -apple-system, 'Segoe UI', sans-serif;
+  line-height:1.65;
+  padding-top: env(safe-area-inset-top,0px);
+  padding-bottom: env(safe-area-inset-bottom,0px);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5{
+  font-family:'Literata', Georgia, 'Times New Roman', serif;
+  font-weight:600;
+  line-height:1.28;
+  margin:0 0 .5em 0;
+  color:var(--ink);
+}
+a{color:var(--sage-ink);}
+p{margin:0 0 1em 0;}
+ul{margin:0 0 1em 0;padding-left:1.3em;}
+ol{margin:0 0 1em 0;padding-left:1.5em;}
+.mini-body-inner blockquote{font-style:normal;}
+
+li{margin-bottom:.5em;}
+blockquote{
+  margin:0 0 1em 0;
+  padding:.7em 1.1em;
+  border-left:3px solid var(--sage);
+  background:var(--sage-bg);
+  border-radius:0 10px 10px 0;
+  font-style:italic;
+  color:var(--ink-soft);
+}
+.container{max-width:720px;margin:0 auto;padding:0 18px;}
+
+/* ---------- HEADER ---------- */
+header.topbar{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.topbar-inner{
+  max-width:720px;margin:0 auto;padding:12px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.top-back-btn{
+  display:none;align-items:center;gap:7px;flex-shrink:0;
+  padding:8px 14px 8px 12px;border-radius:999px;border:1.5px solid var(--sage);
+  background:var(--sage-bg);color:var(--sage-ink);
+  cursor:pointer;font-family:inherit;font-weight:700;font-size:13.5px;
+}
+.top-back-btn.show{display:flex;}
+.top-back-btn:active{filter:brightness(0.97);}
+.lang-toggle{
+  margin-left:auto;display:flex;background:var(--bg-card);border:1px solid var(--border);border-radius:999px;padding:3px;flex-shrink:0;
+}
+.lang-toggle button{
+  border:none;background:transparent;padding:6px 12px;border-radius:999px;
+  font-family:inherit;font-weight:700;font-size:13px;color:var(--ink-faint);cursor:pointer;
+  transition:background .2s, color .2s;
+}
+.lang-toggle button.active{background:var(--sage);color:#20331E;}
+.progress-row{max-width:720px;margin:0 auto;padding:0 18px 12px 18px;display:flex;gap:8px;}
+.progress-step{
+  flex:1;display:flex;flex-direction:column;gap:6px;align-items:flex-start;
+}
+.progress-bar{height:6px;width:100%;border-radius:999px;background:var(--border);overflow:hidden;}
+.progress-bar > span{display:block;height:100%;width:0%;background:var(--sage);border-radius:999px;transition:width .35s ease;}
+.progress-label{font-size:11.5px;font-weight:700;color:var(--ink-faint);letter-spacing:.01em;}
+.progress-step.current .progress-label{color:var(--ink);}
+.progress-step.done .progress-bar > span{background:var(--sage);}
+
+main{padding-bottom: calc(104px + env(safe-area-inset-bottom,0px));}
+main.container{padding:22px 18px calc(104px + env(safe-area-inset-bottom,0px)) 18px;}
+
+/* ---------- HERO (stage read only) ---------- */
+.hero{padding:6px 0 22px 0;}
+.hero h1{font-size:26px;letter-spacing:-0.01em;}
+.hero .subtitle{color:var(--ink-soft);font-size:15.5px;margin-top:2px;}
+
+/* ---------- 3-STEP GUIDE ---------- */
+.steps-guide{
+  display:flex;align-items:center;gap:4px;flex-wrap:wrap;
+  margin:18px 0 22px 0;padding:14px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;
+}
+.steps-guide-title{width:100%;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:2px;}
+.step-chip{display:flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;font-size:12.5px;font-weight:700;flex:0 0 auto;white-space:nowrap;}
+.step-chip .step-num{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;flex-shrink:0;}
+.step-chip.s1{background:var(--sage-bg);color:var(--sage-ink);}
+.step-chip.s1 .step-num{background:var(--sage);color:#20331E;}
+.step-chip.s2{background:var(--lotus-bg);color:var(--lotus-ink);}
+.step-chip.s2 .step-num{background:var(--lotus);color:#4A1F27;}
+.step-chip.s3{background:var(--saffron-bg);color:var(--saffron-ink);}
+.step-chip.s3 .step-num{background:var(--saffron);color:#4A3A10;}
+.step-arrow{color:var(--ink-faint);flex-shrink:0;font-size:14px;}
+@media (max-width:480px){
+  .steps-guide{flex-direction:column;align-items:stretch;}
+  .step-chip{width:100%;}
+  .step-arrow{align-self:center;transform:rotate(90deg);}
+}
+
+/* ---------- ACCORDION SECTIONS ---------- */
+.section-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:14px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  border-left:5px solid var(--accent, var(--sage));
+}
+.section-head{
+  width:100%;
+  display:flex;align-items:center;gap:12px;
+  padding:16px 18px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  text-align:left;
+  font-family:inherit;
+  color:var(--ink);
+}
+.section-head .num{
+  flex-shrink:0;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--accent-bg, var(--sage-bg));
+  color:var(--accent-ink, var(--sage-ink));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;font-family:'Literata',serif;
+}
+.section-head .num.check{background:var(--sage);color:#20331E;}
+.section-head .htitle{flex:1;font-family:'Literata',serif;font-weight:600;font-size:17px;min-width:0;}
+.section-head .chev{flex-shrink:0;transition:transform .25s ease;color:var(--ink-faint);}
+.section-card.open .chev{transform:rotate(180deg);}
+.section-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.section-card.open .section-body{max-height:none;}
+.section-body-inner{padding:0 18px 20px 18px;font-size:15.5px;color:var(--ink-soft);}
+.section-body-inner h4{font-size:16.5px;color:var(--ink);margin-top:1.1em;}
+.section-body-inner h5{font-size:15px;color:var(--ink);margin-top:1em;}
+.section-body-inner strong{color:var(--ink);}
+.section-body-inner .callout{
+  background:var(--saffron-bg);border:1px solid var(--saffron);border-radius:12px;padding:12px 14px;margin:0 0 1em 0;
+  font-size:14.5px;
+}
+.section-body-inner .callout strong{color:var(--saffron-ink);}
+.collapse-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:18px;
+  padding:10px 14px;border-radius:12px;border:1px dashed var(--border);background:transparent;
+  font-family:inherit;font-weight:700;font-size:13px;color:var(--ink-faint);cursor:pointer;
+}
+.collapse-btn:hover{color:var(--ink-soft);border-color:var(--ink-faint);}
+.thinker{border-top:1px dashed var(--border);padding-top:14px;margin-top:14px;}
+.thinker:first-of-type{border-top:none;margin-top:0;padding-top:0;}
+.thinker h4{margin-bottom:.4em;}
+.thinker .meta{font-weight:400;color:var(--ink-faint);font-size:.85em;}
+.thinker .critique{background:var(--lotus-bg);border-radius:10px;padding:10px 12px;font-size:14px;}
+.thinker .critique strong{color:var(--lotus-ink);}
+
+/* ---------- MINI ACCORDION (nested, inside Part 3) ---------- */
+.mini-acc{
+  border:1px solid var(--border);
+  border-radius:14px;
+  margin:14px 0;
+  background:color-mix(in srgb, var(--bg-card) 60%, var(--bg) 40%);
+  overflow:hidden;
+}
+.mini-head{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:12px 14px;background:transparent;border:none;cursor:pointer;text-align:left;
+  font-family:'Literata',serif;font-weight:600;font-size:15px;color:var(--ink);
+}
+.mini-chev{flex-shrink:0;color:var(--ink-faint);transition:transform .25s ease;}
+.mini-acc.open > .mini-head .mini-chev{transform:rotate(180deg);}
+.mini-body{max-height:0;overflow:hidden;transition:max-height .32s ease;}
+.mini-acc.open > .mini-body{max-height:none;}
+.mini-body-inner{padding:0 14px 14px 14px;font-size:15px;}
+.mini-acc .mini-acc{background:transparent;border-color:var(--border);}
+.mini-acc .mini-acc .mini-head{font-size:14.5px;font-weight:600;}
+
+/* ---------- TIMELINE ---------- */
+.timeline-wrap{margin:18px 0 22px 0;padding:16px 14px 14px 14px;background:var(--sky-bg);border-radius:16px;border:1px solid var(--sky);}
+.timeline-title{font-size:12.5px;font-weight:700;color:var(--sky-ink);text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px;}
+.timeline-track{display:flex;overflow-x:auto;gap:0;padding-bottom:6px;-webkit-overflow-scrolling:touch;}
+.timeline-node{flex:0 0 auto;width:132px;display:flex;flex-direction:column;align-items:flex-start;position:relative;padding-right:14px;cursor:pointer;background:none;border:none;text-align:left;font-family:inherit;}
+.timeline-node .tl-line{position:absolute;top:7px;left:0;width:100%;height:2px;background:var(--sky);}
+.timeline-node:last-child .tl-line{width:0;}
+.timeline-node .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--sky-ink);border:3px solid var(--sky-bg);position:relative;z-index:2;margin-bottom:8px;}
+.timeline-node .tl-year{font-size:11.5px;font-weight:700;color:var(--sky-ink);}
+.timeline-node .tl-name{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:1px;line-height:1.25;}
+.timeline-node .tl-idea{font-size:11px;color:var(--ink-soft);margin-top:2px;line-height:1.3;}
+
+/* ---------- BACK TO TOP (flash/quiz) ---------- */
+.back-top-row{display:flex;justify-content:flex-start;margin-bottom:10px;}
+.back-top-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;border:1px solid var(--border);border-radius:999px;
+  padding:6px 12px;font-size:12.5px;font-weight:700;color:var(--ink-soft);cursor:pointer;font-family:inherit;
+}
+
+.table-wrap{overflow-x:auto;margin-bottom:1em;-webkit-overflow-scrolling:touch;}
+table.glossary{border-collapse:collapse;width:100%;min-width:0;font-size:14px;}
+table.glossary th{
+  text-align:left;background:var(--sage-bg);color:var(--sage-ink);
+  padding:9px 10px;font-family:'Literata',serif;font-weight:600;font-size:13px;
+  position:sticky;top:0;
+}
+table.glossary td{padding:9px 10px;border-top:1px solid var(--border);vertical-align:top;}
+table.glossary tr:nth-child(odd){background:color-mix(in srgb, var(--bg-card) 60%, var(--bg) 40%);}
+
+ul.refs{padding-left:1.1em;font-size:14.5px;color:var(--ink-soft);}
+ul.refs li{margin-bottom:.65em;}
+
+.fn-ref{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:19px;height:19px;border-radius:50%;
+  background:var(--sky-bg);color:var(--sky-ink);
+  font-size:10.5px;font-weight:700;border:1px solid var(--sky);
+  cursor:pointer;vertical-align:super;margin:0 1px;
+  font-family:'Be Vietnam Pro',sans-serif;padding:0;
+}
+
+/* ---------- CONTINUE BAR ---------- */
+.continue-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:35;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--border);
+  padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px)) 18px;
+}
+.continue-bar-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.continue-status{font-size:13px;color:var(--ink-faint);font-weight:600;}
+.btn{
+  border:none;border-radius:999px;padding:12px 22px;font-weight:700;font-size:14.5px;
+  font-family:'Be Vietnam Pro',sans-serif;cursor:pointer;
+  background:var(--sage);color:#20331E;
+  transition:transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+  box-shadow:0 4px 14px rgba(143,185,136,.35);
+}
+.btn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;}
+.btn:not(:disabled):active{transform:scale(.97);}
+.btn.secondary{background:transparent;color:var(--ink-soft);box-shadow:none;border:1px solid var(--border);}
+
+/* ---------- MODAL (footnotes) ---------- */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(30,26,20,.45);
+  display:flex;align-items:flex-end;justify-content:center;z-index:100;
+  opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.modal-backdrop.show{opacity:1;pointer-events:auto;}
+.modal-sheet{
+  background:var(--bg-card);border-radius:20px 20px 0 0;max-width:560px;width:100%;
+  padding:20px 22px calc(22px + env(safe-area-inset-bottom,0px)) 22px;
+  transform:translateY(20px);transition:transform .25s ease;
+  box-shadow:0 -6px 24px rgba(0,0,0,.15);
+  max-height:70vh;overflow-y:auto;
+}
+.modal-backdrop.show .modal-sheet{transform:translateY(0);}
+@media (min-width:640px){
+  .modal-backdrop{align-items:center;}
+  .modal-sheet{border-radius:20px;}
+}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.modal-head .tag{font-size:12px;font-weight:700;color:var(--sky-ink);background:var(--sky-bg);padding:3px 9px;border-radius:999px;}
+.modal-close{background:var(--border);border:none;width:28px;height:28px;border-radius:50%;font-size:15px;cursor:pointer;color:var(--ink);}
+.modal-body{font-size:15px;color:var(--ink-soft);}
+
+/* ---------- FLASHCARDS ---------- */
+.stage-panel{min-height:50vh;}
+.flash-wrap{display:flex;flex-direction:column;align-items:center;padding-top:6px;}
+.flash-scene{width:100%;max-width:480px;height:clamp(220px, 44vh, 400px);perspective:1700px;margin-bottom:16px;}
+.flash-counter{font-size:13px;font-weight:700;color:var(--ink-faint);margin-bottom:10px;}
+
+.flash-card{
+  position:relative;width:100%;height:100%;cursor:pointer;
+  transform-style:preserve-3d;
+}
+.flash-card.flipped{transform:rotateY(180deg);}
+@keyframes flipToBack{
+  0%{transform:rotateY(0deg) scale(1);}
+  45%{transform:rotateY(100deg) scale(1.07);}
+  100%{transform:rotateY(180deg) scale(1);}
+}
+@keyframes flipToFront{
+  0%{transform:rotateY(180deg) scale(1);}
+  45%{transform:rotateY(80deg) scale(1.07);}
+  100%{transform:rotateY(0deg) scale(1);}
+}
+.flash-card.flip-to-back{animation:flipToBack .58s cubic-bezier(.3,.1,.3,1) both;}
+.flash-card.flip-to-front{animation:flipToFront .58s cubic-bezier(.3,.1,.3,1) both;}
+.flash-card:active{filter:brightness(0.98);}
+.flash-face{
+  position:absolute;inset:0;backface-visibility:hidden;
+  border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  text-align:center;padding:26px;box-shadow:0 10px 26px rgba(62,58,52,.12), 0 2px 8px rgba(62,58,52,.06);border:1px solid var(--border);
+  overflow-y:auto;
+}
+.flash-face-content{margin:auto 0;width:100%;}
+.flash-face.front{background:var(--bg-card);}
+.flash-face.back{background:var(--accent-bg, var(--sage-bg));border-color:var(--accent, var(--sage));transform:rotateY(180deg);}
+.flash-face::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:28px;border-radius:0 0 20px 20px;pointer-events:none;
+  background:linear-gradient(to bottom, transparent, var(--bg-card));
+}
+.flash-face.back::after{background:linear-gradient(to bottom, transparent, var(--accent-bg, var(--sage-bg)));}
+.flash-face .kicker{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink-faint);margin-bottom:14px;}
+.flash-face.back .kicker{color:var(--accent-ink, var(--sage-ink));opacity:.75;}
+.flash-face .term{font-family:'Literata',serif;font-size:22px;font-weight:600;color:var(--ink);}
+.flash-face .term-repeat{font-family:'Literata',serif;font-size:18px;font-weight:700;color:var(--accent-ink, var(--sage-ink));margin-bottom:10px;}
+.flash-face .def{font-size:18px;font-weight:600;color:var(--accent-ink, var(--sage-ink));line-height:1.6;}
+.flash-face .tap-hint{display:block;margin-top:18px;font-size:12px;color:var(--ink-faint);}
+@media (max-width:480px){
+  .flash-scene{height:clamp(230px, 47vh, 380px);}
+  .flash-face{padding:18px 16px;}
+  .flash-face .kicker{margin-bottom:8px;}
+  .flash-face .term{font-size:20px;}
+  .flash-face .term-repeat{font-size:16px;margin-bottom:8px;}
+  .flash-face .def{font-size:15.5px;font-weight:500;line-height:1.5;}
+  .flash-face .tap-hint{margin-top:10px;}
+  table.glossary td{padding:8px 6px;font-size:13px;}
+}
+.flash-nav{display:flex;align-items:center;gap:16px;}
+.flash-dot-row{display:flex;gap:5px;flex-wrap:wrap;max-width:280px;justify-content:center;margin-top:12px;}
+.flash-dot{width:7px;height:7px;border-radius:50%;background:var(--border);}
+.flash-dot.seen{background:var(--sage);}
+.flash-dot.current{background:var(--lotus);}
+.iconbtn{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg-card);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);
+}
+.iconbtn:disabled{opacity:.35;cursor:not-allowed;}
+
+/* ---------- QUIZ ---------- */
+.quiz-progress{font-size:13px;font-weight:700;color:var(--ink-faint);margin-bottom:10px;}
+.quiz-q{font-family:'Literata',serif;font-size:19px;font-weight:600;margin-bottom:16px;}
+.quiz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.quiz-option{
+  text-align:left;padding:13px 16px;border-radius:14px;border:1.5px solid var(--border);
+  background:var(--bg-card);font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+  transition:border-color .15s, background .15s;
+}
+.quiz-option.selected{border-color:var(--sage);background:var(--sage-bg);}
+.quiz-option.correct{border-color:var(--sage);background:var(--sage-bg);}
+.quiz-option.wrong{border-color:var(--lotus);background:var(--lotus-bg);}
+.quiz-explain{
+  background:var(--sky-bg);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--sky-ink);margin-bottom:14px;
+}
+.quiz-dot-row{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+.quiz-dot{width:26px;height:26px;border-radius:8px;background:var(--border);border:none;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--ink-faint);font-family:inherit;cursor:pointer;}
+.quiz-dot.answered{background:var(--sage-bg);color:var(--sage-ink);}
+.quiz-dot.current{outline:2px solid var(--sage);outline-offset:1px;}
+.quiz-retry-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;border:1px dashed var(--border);border-radius:999px;
+  padding:8px 14px;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--ink-faint);
+  cursor:pointer;margin-bottom:16px;
+}
+.retake-btn{margin-top:18px;background:var(--saffron);color:#4A3A10;box-shadow:0 4px 14px rgba(231,186,83,.35);display:inline-flex;align-items:center;gap:7px;}
+
+
+/* ---------- SECTION SUMMARY (v2) ---------- */
+.summary-bar{padding:0 18px 12px 18px;display:flex;}
+.summary-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 14px;border-radius:999px;border:1.5px solid var(--saffron);
+  background:var(--saffron-bg);color:var(--saffron-ink);
+  font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;
+}
+.summary-btn:active{filter:brightness(.97);}
+.summary-btn .sb-chev{transition:transform .2s ease;}
+.summary-btn.on .sb-chev{transform:rotate(180deg);}
+.summary-panel{
+  margin:0 18px 14px 18px;padding:14px 16px;border-radius:14px;
+  background:var(--saffron-bg);border:1px solid var(--saffron);
+  font-size:15px;color:var(--saffron-ink);line-height:1.65;
+}
+.summary-panel .sp-tag{font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;opacity:.8;margin-bottom:6px;display:block;}
+.summary-panel p:last-of-type,.summary-panel ul:last-of-type{margin-bottom:.4em;}
+.summary-panel strong{color:var(--ink);}
+.summary-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.summary-actions button{
+  padding:6px 12px;border-radius:999px;border:1px solid var(--saffron);background:transparent;
+  color:var(--saffron-ink);font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;
+}
+
+/* ---------- QUIZ LEVEL PICKER (v2) ---------- */
+.level-intro{font-family:'Literata',serif;font-size:20px;font-weight:600;margin:4px 0 6px 0;}
+.level-sub{font-size:14px;color:var(--ink-soft);margin-bottom:16px;}
+.level-card{
+  display:block;width:100%;text-align:left;margin-bottom:12px;padding:16px 18px;border-radius:16px;
+  border:1.5px solid var(--lvl, var(--sage));background:var(--lvl-bg, var(--sage-bg));color:var(--lvl-ink, var(--sage-ink));
+  font-family:inherit;cursor:pointer;
+}
+.level-card:disabled{opacity:.6;cursor:not-allowed;border-style:dashed;}
+.level-card:not(:disabled):active{transform:scale(.99);}
+.level-card .lv-name{font-family:'Literata',serif;font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.level-card .lv-meta{font-size:13px;font-weight:600;margin-top:4px;opacity:.85;}
+.level-card .lv-desc{font-size:14px;margin-top:6px;color:var(--ink-soft);}
+.level-chip{
+  display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;margin-bottom:10px;
+  background:var(--lvl-bg, var(--sage-bg));color:var(--lvl-ink, var(--sage-ink));border:1px solid var(--lvl, var(--sage));
+}
+.lvl-medium{--lvl:var(--sage);--lvl-bg:var(--sage-bg);--lvl-ink:var(--sage-ink);}
+.lvl-advanced{--lvl:var(--lotus);--lvl-bg:var(--lotus-bg);--lvl-ink:var(--lotus-ink);}
+.shuffle-note{font-size:12.5px;color:var(--ink-faint);margin-top:6px;display:flex;align-items:center;gap:6px;}
+.results-actions{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:18px;}
+.results-actions .btn{margin-top:0;}
+.btn.lotus{background:var(--lotus);color:#4A1F27;box-shadow:0 4px 14px rgba(232,163,176,.35);}
+
+/* ---------- RESULTS ---------- */
+.results{text-align:center;padding:20px 0 10px 0;}
+.results .big-emoji{font-size:56px;display:block;margin-bottom:6px;}
+.results h2{font-size:22px;}
+.results .score{font-family:'Literata',serif;font-size:40px;font-weight:700;color:var(--sage-ink);margin:6px 0 2px 0;}
+.results .congrats{
+  margin-top:16px;background:var(--saffron-bg);border:1px solid var(--saffron);border-radius:16px;
+  padding:18px 20px;font-size:16px;font-weight:600;color:var(--saffron-ink);line-height:1.5;
+}
+.results .review-title{margin-top:26px;font-family:'Literata',serif;font-size:16px;text-align:left;}
+.review-item{text-align:left;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-top:10px;font-size:14px;}
+.review-item .q{font-weight:700;margin-bottom:4px;}
+.review-item .a-correct{color:var(--sage-ink);}
+.review-item .a-wrong{color:var(--lotus-ink);}
+
+/* ---------- CONFETTI & FIREWORKS ---------- */
+.confetti-piece{
+  position:fixed;top:-20px;z-index:200;border-radius:2px;pointer-events:none;
+  animation:confetti-fall linear forwards;
+}
+@keyframes confetti-fall{
+  to{transform:translateY(110vh) rotate(var(--rot));opacity:.9;}
+}
+.spark{
+  position:fixed;z-index:201;border-radius:50%;pointer-events:none;
+  animation:spark-burst ease-out forwards;
+}
+@keyframes spark-burst{
+  0%{transform:translate(0,0) scale(1);opacity:1;}
+  100%{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0;}
+}
+.results .big-emoji{animation:emoji-pop .6s cubic-bezier(.2,1.4,.4,1);}
+@keyframes emoji-pop{
+  0%{transform:scale(0.3);opacity:0;}
+  60%{transform:scale(1.15);opacity:1;}
+  100%{transform:scale(1);}
+}
+
+@media (max-width:420px){
+  .hero h1{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="top-back-btn" id="topBackBtn" onclick="goToRead()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="topBackLabel">Đọc tài liệu</span>
+    </button>
+    <div class="lang-toggle" role="group" aria-label="Ngôn ngữ / Language">
+      <button id="btnLangVi" class="active" onclick="setLang('vi')">VI</button>
+      <button id="btnLangEn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+  <div class="progress-row">
+    <div class="progress-step" data-stage="read">
+      <span class="progress-label" data-i18n-label="read"></span>
+      <span class="progress-bar"><span id="pbRead"></span></span>
+    </div>
+    <div class="progress-step" data-stage="flash">
+      <span class="progress-label" data-i18n-label="flash"></span>
+      <span class="progress-bar"><span id="pbFlash"></span></span>
+    </div>
+    <div class="progress-step" data-stage="quiz">
+      <span class="progress-label" data-i18n-label="quiz"></span>
+      <span class="progress-bar"><span id="pbQuiz"></span></span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div id="stageRead" class="stage-panel"></div>
+  <div id="stageFlash" class="stage-panel" style="display:none;"></div>
+  <div id="stageQuiz" class="stage-panel" style="display:none;"></div>
+</main>
+
+<div class="continue-bar" id="continueBar">
+  <div class="continue-bar-inner">
+    <span class="continue-status" id="continueStatus"></span>
+    <button class="btn" id="continueBtn"></button>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="fnModal" onclick="closeFn(event)">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <span class="tag" id="fnTag">Ghi chú</span>
+      <button class="modal-close" onclick="closeFn()">✕</button>
+    </div>
+    <div class="modal-body" id="fnBody"></div>
+  </div>
+</div>
+
+<script id="artifact-data" type="application/json">{"meta": {"title": {"vi": "Đức Phật và Giáo pháp của Ngài đối với tinh thần Bi Trí Dũng", "en": "The Buddha and His Teaching through the Spirit of Compassion, Wisdom, and Courage (Bi – Trí – Dũng)"}, "subtitle": {"vi": "Đọc từng phần, ôn thuật ngữ bằng thẻ lật, rồi tự kiểm tra bằng trắc nghiệm.", "en": "Read each part, review key terms with flashcards, then check yourself with a quiz."}, "kicker": {"vi": "Tài liệu tu học · Bậc Kiên", "en": "Study material · Kiên level"}}, "sections": [{"id": "i-muc-dich", "title": {"vi": "MỤC ĐÍCH PHẬT PHÁP", "en": "THE PURPOSE OF THE DHARMA"}, "html": {"vi": "<p>Đức Phật là một con người đã giác ngộ và giải thoát. Với lòng từ bi vô lượng, không nỡ nhìn thấy chúng sinh chìm trong biển khổ luân hồi, nên sau khi thành đạo dưới cội Bồ-đề, Ngài đã chuyển bánh xe Chánh pháp lần đầu tiên tại vườn Lộc Uyển. Những lời dạy cùng kinh nghiệm tu chứng của Đức Phật chính là nguồn giáo pháp, mở ra con đường tu tập cho tất cả mọi người, với mục đích là giúp cho chúng sinh có trí tuệ như Phật. Đức Phật từng nói: “Ta là Phật đã thành, chúng sinh là Phật sẽ thành.”</p>\n<p>Giáo pháp không phải là một học thuyết để tin suông mà là con đường thực hành và tự chứng nghiệm, giúp chúng sinh đạt đến trạng thái của:</p>\n<p><strong>a. Chân thường</strong> – thường hằng, không bị biến đổi bởi sinh diệt.</p>\n<p><strong>b. Chân lạc</strong> – niềm an lạc chân thật khi tham ái, sân hận và si mê đã được đoạn trừ.</p>\n<p><strong>c. Chân ngã</strong> – chỉ sự tự tại của Niết-bàn, không nên hiểu là một bản ngã thường còn.</p>\n<p><strong>d. Chân tịnh</strong> – chỉ sự thanh tịnh, trong sáng khi các phiền não đã được chuyển hóa và diệt trừ.</p>\n<p>Trên đây là bốn phẩm chất mô tả trạng thái giải thoát. Đức Phật dạy giáo pháp để giúp chúng sinh đạt đến trạng thái ấy.</p>\n<p><strong>Phật pháp, tự trong cốt tủy, không phải là một hệ thống học thuyết khô cứng.</strong></p>\n<p>Phật pháp tuy được truyền đạt bằng ngôn ngữ, nhưng không chỉ là những điều để học và ghi nhớ. Cốt lõi của Phật pháp là con đường thực hành, giúp con người hiểu để chuyển hóa khổ đau, phát triển trí tuệ và hướng đến giải thoát. Trong suốt 45 năm thuyết pháp, Đức Phật luôn nhấn mạnh rằng mỗi người cần học giáo pháp, suy ngẫm, thực hành và tự mình chứng nghiệm. Vì vậy, giáo pháp Ngài giảng dạy không nên chấp vào chữ nghĩa mà quên mục đích giải thoát. Điều này thường được diễn đạt qua các ý sau:</p>\n<div class=\"mini-acc\" data-mid=\"i-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“Ngón tay chỉ mặt trăng”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Kinh điển và khái niệm chỉ là phương tiện hướng người học đến chân lý, giống như ngón tay chỉ về phía mặt trăng. Vì vậy, không nên đồng nhất lời dạy với sự chứng ngộ chân lý.</p></div></div></div><div class=\"mini-acc\" data-mid=\"i-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“Chiếc bè qua sông”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Giáo pháp là phương tiện giúp con người vượt qua khổ đau và phiền não. Khi đã đạt mục đích, người học không nên chấp giữ giáo pháp như một gánh nặng.</p></div></div></div><div class=\"mini-acc\" data-mid=\"i-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“Chân lý vượt ngoài ngôn ngữ”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Ngôn ngữ và suy luận chỉ giúp chúng ta hiểu một phần. Chân lý cần được trực tiếp chứng nghiệm qua quá trình tu tập và buông bỏ những suy nghĩ và nhận thức sai lệch.</p></div></div></div>", "en": "<p>The Buddha was a person who had awakened (giác ngộ) and attained liberation (giải thoát). Moved by boundless compassion, unable to bear witnessing sentient beings adrift in the sea of suffering through the cycle of birth and death (luân hồi), after attaining enlightenment beneath the Bodhi tree (Bồ-đề), he set the Wheel of the Dharma (Chánh pháp) in motion for the first time at Deer Park (Lộc Uyển). The Buddha’s teachings and the experience of his own realization became the source of the Dharma, opening a path of practice for all people, with the aim of helping sentient beings attain the same wisdom as the Buddha himself. The Buddha once said: “I am a Buddha who has already attained it; sentient beings are Buddhas yet to attain it.”</p>\n<p>The Dharma is not a doctrine to be believed blindly, but a path of practice and direct, personal realization, helping sentient beings reach the state of:</p>\n<p><strong>a. True Permanence (Chân thường)</strong> — the unchanging, not subject to arising and ceasing.</p>\n<p><strong>b. True Bliss (Chân lạc)</strong> — the genuine peace and joy that arises once craving, aversion, and delusion have been uprooted.</p>\n<p><strong>c. True Self (Chân ngã)</strong> — referring to the sovereign freedom of Nirvana (Niết-bàn), not to be understood as a permanent ego.</p>\n<p><strong>d. True Purity (Chân tịnh)</strong> — the clarity and purity that come once afflictions have been transformed and eliminated.</p>\n<p>These four qualities describe the state of liberation. The Buddha taught the Dharma to help sentient beings reach that state.</p>\n<p><strong>At its core, the Buddha-Dharma is not a rigid system of doctrine.</strong></p>\n<p>Although the Dharma is conveyed through language, it is not merely something to be studied and memorized. At its heart, the Dharma is a path of practice that helps people understand and transform suffering, develop wisdom, and move toward liberation. Throughout his forty-five years of teaching, the Buddha consistently emphasized that each person must study the teaching, reflect on it, practice it, and realize it for themselves. For this reason, his teaching should never be clung to as mere words at the expense of its true purpose — liberation. This is often expressed in the following ways:</p>\n<div class=\"mini-acc\" data-mid=\"i-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“A finger pointing at the moon”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Scriptures and concepts are only a means of pointing the learner toward the truth, just as a finger points toward the moon. The teaching should therefore never be mistaken for the realization of truth itself.</p></div></div></div><div class=\"mini-acc\" data-mid=\"i-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“A raft for crossing the river”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>The Dharma is a means for crossing over suffering and affliction. Once the goal has been reached, the practitioner should not cling to the teaching as though it were a burden to be carried forever.</p></div></div></div><div class=\"mini-acc\" data-mid=\"i-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">“Truth beyond language”</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Language and reasoning can only bring us partial understanding. Truth must be directly realized through practice, and through letting go of mistaken thoughts and perceptions.</p></div></div></div>"}, "summary": {"vi": "<ul><li>Đức Phật là con người đã giác ngộ và giải thoát; vì lòng từ bi, Ngài chuyển bánh xe Chánh pháp để giúp chúng sinh có trí tuệ như Phật.</li><li>Giáo pháp là con đường thực hành và tự chứng nghiệm, không phải học thuyết để tin suông.</li><li>Giáo pháp đưa đến bốn phẩm chất của trạng thái giải thoát: chân thường, chân lạc, chân ngã, chân tịnh.</li><li>Ba hình ảnh “ngón tay chỉ mặt trăng”, “chiếc bè qua sông”, “chân lý vượt ngoài ngôn ngữ” nhắc người học đừng chấp vào chữ nghĩa mà quên mục đích giải thoát.</li></ul>", "en": "<ul><li>The Buddha was a person who had awakened and attained liberation; moved by compassion, he set the Wheel of the Dharma in motion to help sentient beings attain wisdom like his own.</li><li>The Dharma is a path of practice and direct, personal realization, not a doctrine to be believed blindly.</li><li>It leads to four qualities of the liberated state: True Permanence, True Bliss, True Self, and True Purity.</li><li>The images of “a finger pointing at the moon”, “a raft for crossing the river”, and “truth beyond language” remind learners not to cling to words at the expense of liberation.</li></ul>"}}, {"id": "ii-dai-cuong", "title": {"vi": "ĐẠI CƯƠNG PHẬT PHÁP", "en": "AN OVERVIEW OF THE DHARMA"}, "html": {"vi": "<p>Phật pháp rất phong phú, thường được diễn đạt bằng con số biểu trưng 84.000 pháp môn, được Đức Phật giảng tùy theo căn cơ của chúng sinh. Giáo lý bao gồm ba tạng kinh điển:</p>\n<div class=\"mini-acc\" data-mid=\"ii-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Kinh</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Kinh là lời Phật dạy về giáo lý và pháp tu.</p></div></div></div><div class=\"mini-acc\" data-mid=\"ii-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Luật</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Những giới luật và quy tắc sinh hoạt do Đức Phật chế ra để giữ đời sống thanh tịnh và hòa hợp. Luật chủ yếu dành cho người xuất gia. Riêng người tại gia cũng có giới căn bản để thực hành như Năm giới, Thập thiện giới, Bát quan trai giới, Bồ Tát Giới tại gia v.v. được ghi trong Kinh tạng và Luận tạng.</p></div></div></div><div class=\"mini-acc\" data-mid=\"ii-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Luận</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Những lời giải thích, bàn luận của các vị đệ tử và tổ sư để làm rõ ý nghĩa sâu xa của Kinh và Luật.</p></div></div></div>\n<blockquote>\n<p>Kinh điển Phật giáo được lưu truyền trong nhiều truyền thống; tại Việt Nam thường phân biệt truyền thống Bắc tông và Nam tông. Ở Việt Nam, cách gọi “Bắc tông” thường chỉ các truyền thống Đại thừa phát triển tại Đông Á, còn “Nam tông” thường chỉ Phật giáo Theravāda (Thượng tọa bộ) được truyền bá tại Nam Á và Đông Nam Á.</p>\n</blockquote>\n<p>Phật pháp giúp chúng ta nhận ra khổ đau của cuộc đời không phải để bi quan, mà để tìm hiểu nguyên nhân của khổ đau. Từ đó, Phật pháp chỉ ra con đường dẫn đến an vui bằng chính nỗ lực tu tập của mỗi người, thay vì dựa vào sự cầu nguyện thần linh. Con đường ấy được gọi là Bát chánh đạo và được sắp xếp thành ba nhóm: <strong>Tuệ, Giới và Định.</strong></p>\n<div class=\"table-wrap\"><table class=\"glossary\">\n<tr>\n<td><strong>TUỆ</strong></td>\n<td><strong>1. Chánh kiến</strong> – Hiểu biết đúng đắn; <strong>2. Chánh tư duy</strong> – Suy nghĩ đúng đắn</td>\n</tr>\n\n<tbody>\n<tr>\n<td><strong>GIỚI</strong></td>\n<td><strong>3. Chánh ngữ</strong> – Lời nói đúng đắn; <strong>4. Chánh nghiệp</strong> – Hành động đúng đắn;<br />\n<strong>5. Chánh mạng</strong> – Nghề nghiệp đúng đắn</td>\n</tr>\n<tr>\n<td><strong>ĐỊNH</strong></td>\n<td><strong>6. Chánh tinh tấn</strong> – Cố gắng đúng đắn; <strong>7. Chánh niệm</strong> – nhớ nghĩ, chú tâm đúng đắn;<br />\n<strong>8. Chánh định</strong> – Tập trung đúng đắn</td>\n</tr>\n</tbody>\n</table></div>\n<p>Ba nhóm này liên hệ chặt chẽ và hỗ trợ lẫn nhau: <strong>trí tuệ</strong> giúp chúng ta nhận ra tầm quan trọng của <strong>giới luật</strong>; <strong>giữ giới</strong> giúp tâm không buông lung và dễ đạt <strong>định</strong>; <strong>định tâm</strong> lại tạo điều kiện để <strong>trí tuệ</strong> tiếp tục phát triển.</p>\n<p><strong>Các quy luật vận hành đời sống</strong></p>\n<ol type=\"a\">\n<li><p><strong>Vô thường và duyên khởi</strong>: mọi sự vật đều do nhiều yếu tố liên kết mà thành, không tự nhiên mà có và cũng không do ai sinh ra. Sự thay đổi của một yếu tố sẽ làm thay đổi sự vật.</p></li>\n<li><p><strong>Luân hồi và nghiệp quả:</strong> theo giáo lý luân hồi, cái chết không phải là chấm hết mà là sự tiếp nối của một đời sống khác. Mọi hành động có chủ ý (nghiệp) đều tạo điều kiện cho quả tương ứng; tiến trình nghiệp và quả tiếp nối không ngừng.</p></li>\n</ol>", "en": "<p>The Dharma is vast and rich, often described by the symbolic figure of 84,000 Dharma doors (pháp môn), each taught by the Buddha according to the capacity and disposition of the listener. The teaching is contained within the Three Baskets of scripture (Tam tạng kinh điển):</p>\n<div class=\"mini-acc\" data-mid=\"ii-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Sutra (Kinh)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>the Buddha’s own words on doctrine and practice.</p></div></div></div><div class=\"mini-acc\" data-mid=\"ii-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Vinaya (Luật)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>the precepts and rules of conduct established by the Buddha to preserve a pure and harmonious communal life. The Vinaya applies chiefly to monastics; lay practitioners likewise have foundational precepts to observe — such as the Five Precepts, the Ten Good Precepts (Thập thiện giới), the Eight Precepts, and the lay Bodhisattva Precepts — recorded within the Sutra Basket and the Treatise Basket.</p></div></div></div><div class=\"mini-acc\" data-mid=\"ii-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Treatises (Luận)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>explanations and discussions by disciples and patriarchs that clarify the deeper meaning of the Sutras and the Vinaya.</p></div></div></div>\n<p>Buddhist scripture has been passed down through many traditions; in Vietnam, a distinction is commonly drawn between the Northern tradition (Bắc tông) and the Southern tradition (Nam tông). In Vietnam, “Northern tradition” (Bắc tông) usually refers to the Mahāyāna traditions that developed in East Asia, while “Southern tradition” (Nam tông) usually refers to Theravāda Buddhism (Thượng tọa bộ), which spread throughout South and Southeast Asia.</p>\n<p>The Dharma helps us recognize the suffering inherent in life — not in order to foster pessimism, but to investigate the causes of that suffering. From there, it points to a path leading to genuine well-being through each person’s own effort in practice, rather than through prayer to the gods. That path is called the Noble Eightfold Path (Bát chánh đạo), and it is organized into three groups: Wisdom (Tuệ), Ethical Conduct (Giới), and Concentration (Định).</p>\n<div class=\"table-wrap\"><table class=\"glossary\">\n<tbody>\n<tr>\n<td><strong>WISDOM (Tuệ)</strong></td>\n<td><strong>1. Right View</strong> (Chánh kiến) — correct understanding; <strong>2. Right Thought</strong> (Chánh tư duy) — correct thinking</td>\n</tr>\n<tr>\n<td><strong>ETHICAL CONDUCT (Giới)</strong></td>\n<td><strong>3. Right Speech</strong> (Chánh ngữ) — correct speech; <strong>4. Right Action</strong> (Chánh nghiệp) — correct conduct; <strong>5. Right Livelihood</strong> (Chánh mạng) — correct occupation</td>\n</tr>\n<tr>\n<td><strong>CONCENTRATION (Định)</strong></td>\n<td><strong>6. Right Effort</strong> (Chánh tinh tấn) — correct effort; <strong>7. Right Mindfulness</strong> (Chánh niệm) — correct recollection and attention; <strong>8. Right Concentration</strong> (Chánh định) — correct focus</td>\n</tr>\n</tbody>\n</table></div>\n<p>These three groups are closely interconnected and mutually supportive: wisdom helps us recognize the importance of ethical discipline; keeping the precepts keeps the mind from running loose and makes concentration easier to attain; and a concentrated mind, in turn, creates the conditions for wisdom to keep developing.</p>\n<p><strong>The laws governing existence</strong></p>\n<ol type=\"a\">\n<li><p><strong>Impermanence (Vô thường) and Dependent Origination (Duyên khởi):</strong> all things arise through the coming together of many interdependent factors; nothing exists spontaneously, and nothing is created by any single agent. A change in one factor brings about a change in the thing itself.</p></li>\n<li><p><strong>Cycle of Birth and Death (Luân hồi) and Karma (Nghiệp quả):</strong> according to the teaching of the cycle of birth and death, death is not an ending but a continuation into another life. Every intentional action creates the conditions for its corresponding result; this process of action and result continues without pause.</p></li>\n</ol>"}, "summary": {"vi": "<ul><li>Phật pháp phong phú, được biểu trưng bằng 84.000 pháp môn; giáo lý gồm ba tạng: Kinh, Luật, Luận.</li><li>Tại Việt Nam thường phân biệt truyền thống Bắc tông và Nam tông.</li><li>Bát chánh đạo dẫn đến an vui bằng chính nỗ lực tu tập của mỗi người, gồm ba nhóm hỗ trợ lẫn nhau: Tuệ, Giới, Định.</li><li>Đời sống vận hành theo hai quy luật: vô thường – duyên khởi, và luân hồi – nghiệp quả.</li></ul>", "en": "<ul><li>The Dharma is rich, symbolized by 84,000 Dharma doors; its teaching is contained in three Baskets: Sutra, Vinaya, and Treatises.</li><li>In Vietnam, a distinction is commonly drawn between the Northern tradition (Bắc tông) and the Southern tradition (Nam tông).</li><li>The Noble Eightfold Path leads to genuine well-being through each person's own effort, in three mutually supportive groups: Wisdom, Ethical Conduct, and Concentration.</li><li>Existence is governed by two laws: impermanence and dependent origination, and the cycle of birth and death and karma.</li></ul>"}}, {"id": "iii-con-duong", "title": {"vi": "CON ĐƯỜNG TU HỌC", "en": "THE PATH OF STUDY AND PRACTICE"}, "html": {"vi": "<p>Dù giáo lý Phật pháp rất phong phú được kết tập trong Tam tạng kinh điển, dù có nhiều pháp môn tu tập khác nhau, tất cả người học Phật đều phải đi qua một lộ trình học và hành cụ thể, rõ ràng:</p>\n<div class=\"mini-acc\" data-mid=\"iii-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">VĂN</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Văn là học hỏi bằng cách nghe giảng giáo lý, đọc tụng kinh điển, pháp đàm với thái độ cởi mở, phải thao thức, muốn hiểu, muốn thực hành.</p></div></div></div><div class=\"mini-acc\" data-mid=\"iii-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">TƯ</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Tư là suy ngẫm, tư duy, quán chiếu những điều mình nghe, đối chiếu với những kinh nghiệm mình trải qua trong cuộc sống để hiểu sâu hơn.</p></div></div></div><div class=\"mini-acc\" data-mid=\"iii-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">TU</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Tu là thực hành, vận dụng những điều mình đã nghe, đã tư duy áp dụng vào chính đời sống để chuyển hóa khổ đau. Đó cũng chính là thực hành “GIỚI – ĐỊNH – TUỆ” trong đời sống hằng ngày.</p></div></div></div>", "en": "<p>However rich and vast the teaching gathered in the Three Baskets of scripture, and however many different Dharma doors of practice there may be, every student of the Buddha must pass through one clear and specific path of study and practice:</p>\n<div class=\"mini-acc\" data-mid=\"iii-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Listening (Văn)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>learning by hearing teachings explained, reading and reciting scripture, and engaging in Dharma discussion with an open mind — approaching it with genuine eagerness, a wish to understand, and a wish to practice.</p></div></div></div><div class=\"mini-acc\" data-mid=\"iii-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Reflecting (Tư)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>contemplating, thinking through, and examining what one has heard, comparing it against one’s own life experience in order to understand it more deeply.</p></div></div></div><div class=\"mini-acc\" data-mid=\"iii-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">Practicing (Tu)</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>putting into action, in one’s own life, what one has heard and reflected on, in order to transform suffering. This is precisely the practice of “Ethical Conduct – Concentration – Wisdom” (Giới – Định – Tuệ) in daily life.</p></div></div></div>"}, "summary": {"vi": "<ul><li>Dù giáo lý phong phú và có nhiều pháp môn, mọi người học Phật đều đi qua một lộ trình cụ thể: Văn – Tư – Tu.</li><li>Văn: học hỏi bằng nghe giảng, đọc tụng kinh điển, pháp đàm.</li><li>Tư: suy ngẫm, đối chiếu với kinh nghiệm sống.</li><li>Tu: thực hành để chuyển hóa khổ đau, chính là thực hành Giới – Định – Tuệ trong đời sống hằng ngày.</li></ul>", "en": "<ul><li>However rich the teaching and however many Dharma doors there are, every student of the Buddha passes through one clear path: Listening – Reflecting – Practicing.</li><li>Listening: learning by hearing teachings, reading scripture, and Dharma discussion.</li><li>Reflecting: contemplating and comparing with life experience.</li><li>Practicing: putting into action to transform suffering, which is precisely the practice of Ethical Conduct – Concentration – Wisdom in daily life.</li></ul>"}}, {"id": "iv-bi-tri-dung", "title": {"vi": "ĐỨC PHẬT VỚI TINH THẦN BI – TRÍ – DŨNG", "en": "THE BUDDHA AND THE SPIRIT OF COMPASSION – WISDOM – COURAGE"}, "html": {"vi": "<p>Đức Phật không phải là một vị thần linh ban phước hay giáng họa, mà là một con người lịch sử đã nỗ lực tự thân đạt đến sự giác ngộ và giải thoát. Đối với học viên ngành Thanh đang tu học Bậc Kiên – những người có thể đang chuẩn bị hành trang bước vào trại Lộc Uyển, Đức Phật chính là bậc Thầy dẫn đường và là tấm gương sáng: Ngài đã tự thân thực chứng con đường giải thoát rồi vì lòng từ bi mà chỉ dạy lại cho chúng sinh.</p>\n<p>Ngài là hiện thân trọn vẹn của ba đức tính cốt lõi: Bi, Trí và Dũng. Ba phẩm chất này chính là kim chỉ nam để học viên Bậc Kiên chúng ta rèn luyện tự thân, chuẩn bị cho mình một tâm thế sẵn sàng trước ngưỡng cửa trở thành người Huynh trưởng.</p>\n<div class=\"mini-acc\" data-mid=\"iv-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">1. Đại Bi - Tình thương vô điều kiện làm động lực dấn thân</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><blockquote>\n<p>Đức Phật xuất gia vì thương chúng sinh còn chịu nhiều khổ đau. Sau khi giác ngộ, Ngài không giữ sự an lạc cho riêng mình mà đi nhiều nơi để truyền dạy Chánh pháp, giúp mọi người hiểu nguyên nhân của khổ đau và mở ra con đường tu tập chuyển hóa.</p>\n</blockquote>\n<ul>\n<li><p><strong>Bài học cho học viên Bậc Kiên:</strong> Lòng BI bắt đầu từ những việc rất gần gũi: biết lắng nghe, cảm thông, kiên nhẫn và sẵn lòng giúp đỡ người khác. Chúng ta có thể quan tâm đến những em nhỏ trong Gia Đình Phật Tử, chia sẻ giúp đỡ bạn bè và yêu thương người thân trong gia đình. Khi nuôi dưỡng tình thương mỗi ngày, ta sẽ có thêm động lực học hỏi, vượt qua khó khăn và từng bước trở thành người Huynh trưởng biết bao dung, chở che và dìu dắt đàn em.</p></li>\n</ul></div></div></div>\n<div class=\"mini-acc\" data-mid=\"iv-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">2. Đại Trí - Sự sáng suốt phá vỡ màn vô minh</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><blockquote>\n<p>Tình thương nếu thiếu đi trí tuệ sẽ rất dễ dẫn đến những hành động cảm tính và sai lầm. Dưới cội Bồ-đề, Đức Phật đã thấu rõ các quy luật vận hành của đời sống như vô thường, duyên khởi và nghiệp quả. Nhờ Đại Trí, Ngài thấu suốt căn cơ của từng người để tùy duyên thuyết giảng, dùng giáo lý như “chiếc bè qua sông” nhằm giúp chúng sinh tự tìm thấy chân lý.</p>\n<p><strong>Bài học cho học viên Bậc Kiên:</strong> Trí tuệ trên hành trình tu học Bậc Kiên chính là cách ta ứng dụng lộ trình “Văn - Tư - Tu” vào thực tế. Chúng ta nghe Pháp, học Bậc Kiên không chỉ để mở rộng kiến thức Phật pháp, mà còn để suy ngẫm, đối chiếu với cuộc sống, từ đó tháo gỡ những buồn vui, vướng mắc của tuổi trẻ (Chánh tư duy). Có Chánh kiến, hiểu đúng mình và hiểu đúng Đạo, ta có được ngọn đuốc sáng để tự soi đường cho bản thân hôm nay và đủ vững vàng để soi sáng cho đàn em sau này.</p>\n</blockquote></div></div></div>\n<div class=\"mini-acc\" data-mid=\"iv-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">3. Đại Dũng - Sức mạnh nội tâm không gì sánh bằng để vượt qua chính mình</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><blockquote>\n<p>Đại Dũng của Đức Phật không phải là sức mạnh bạo lực, mà là nội lực phi thường dứt bỏ vinh hoa phú quý tột bậc để khoác áo tu sĩ. Đó là sức mạnh chiến thắng ma quân – biểu trưng cho những phiền não và tham ái trong tâm – đồng thời bình thản đối mặt với mọi chông gai. Ngài đã dũng mãnh phá bỏ những định kiến giai cấp khắc nghiệt của xã hội lúc bấy giờ bằng một trái tim vô úy (không sợ hãi).</p>\n<p><strong>Bài học cho học viên Bậc Kiên:</strong> Trở thành Huynh trưởng là chấp nhận bước ra khỏi vùng an toàn của một người Đoàn sinh vô tư và được chở che. DŨNG của học viên Bậc Kiên là sự can đảm nhìn nhận và sửa chữa những khuyết điểm của bản thân (Chánh tinh tấn); là sự kiên trì theo đuổi chương trình học Bậc Kiên dẫu bận rộn với bài vở trên giảng đường hay áp lực công việc ngoài xã hội; là bản lĩnh thầm lặng nuôi dưỡng lý tưởng phụng sự, chuẩn bị một đôi vai vững chãi để ngày mai sẵn sàng gánh vác trách nhiệm.</p>\n</blockquote></div></div></div>", "en": "<p>The Buddha was not a deity who grants blessings or metes out punishment, but a historical human being who, through his own effort, attained awakening and liberation. For students of the Thanh branch (ngành Thanh) currently studying at the Kiên level (Bậc Kiên) — who may well be preparing to set out for the Lộc Uyển camp (trại Lộc Uyển) — the Buddha is both guiding teacher and shining example: having realized the path to liberation through his own practice, he then taught it to sentient beings out of compassion.</p>\n<p>He is the complete embodiment of three core qualities: Compassion (Bi), Wisdom (Trí), and Courage (Dũng). These three qualities serve as the guiding compass for us as Kiên-level students to cultivate ourselves, preparing a ready heart and mind as we stand at the threshold of becoming a Huynh trưởng.</p>\n<div class=\"mini-acc\" data-mid=\"iv-1\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">1. Great Compassion (Đại Bi) — Unconditional Love as the Motivation for Engagement</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>The Buddha left the household life out of love for sentient beings still enduring great suffering. After his awakening, he did not keep that peace for himself alone, but traveled widely to teach the Dharma, helping people understand the causes of suffering and opening for them a path of practice and transformation.</p>\n<blockquote>\n<strong>A lesson for Kiên-level students:</strong> Compassion begins with very ordinary things close at hand: knowing how to listen, to empathize, to be patient, and to be willing to help others. We can look after the younger children in the Gia Đình Phật Tử (GĐPT), share and help our friends, and love the members of our own family. By nurturing love each day, we gain more motivation to keep learning, to overcome difficulties, and to grow, step by step, into a Huynh trưởng capable of tolerance, protection, and guidance for the younger members (đàn em).\n</blockquote></div></div></div>\n<div class=\"mini-acc\" data-mid=\"iv-2\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">2. Great Wisdom (Đại Trí) — The Clarity That Shatters the Veil of Ignorance</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>Love without wisdom easily leads to actions driven by emotion and error. Beneath the Bodhi tree, the Buddha fully penetrated the laws governing existence — impermanence, dependent origination, and karma. Through his Great Wisdom, he perceived each person’s capacity and disposition clearly enough to teach according to circumstance, using the Dharma as “a raft for crossing the river” so that sentient beings could discover the truth for themselves.</p>\n<p><strong>A lesson for Kiên-level students:</strong> On the path of studying at the Kiên level, wisdom means applying the path of “Listening – Reflecting – Practicing” (Văn – Tư – Tu) to real life. We listen to the Dharma and study the Kiên curriculum not only to broaden our knowledge of the teaching, but also to reflect on it and weigh it against our own lives, thereby working through the joys, sorrows, and entanglements of youth (Right Thought). With Right View — a correct understanding of ourselves and of the Path — we gain a bright torch to light our own way today, and become steady enough to one day light the way for the younger members who follow.</p></div></div></div>\n<div class=\"mini-acc\" data-mid=\"iv-3\"><button class=\"mini-head\" onclick=\"toggleMini(this)\"><span class=\"mini-title\">3. Great Courage (Đại Dũng) — An Unmatched Inner Strength to Overcome Oneself</span><svg class=\"mini-chev\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 9l6 6 6-6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"mini-body\"><div class=\"mini-body-inner\"><p>The Buddha’s Great Courage was not the strength of violence, but an extraordinary inner power that let him renounce the highest wealth and glory to put on a monastic robe. It was the strength to conquer the army of Māra (ma quân) — symbolizing the afflictions and cravings within the mind — while facing every hardship with composure. With a fearless heart (vô úy), he boldly shattered the harsh caste prejudices of the society of his time.</p>\n<p><strong>A lesson for Kiên-level students:</strong> Becoming a Huynh trưởng means accepting a step out of the safe, carefree, sheltered world of an ordinary Đoàn sinh. Courage, for a Kiên-level student, is the bravery to recognize and correct one’s own shortcomings (Right Effort); it is the persistence to keep following the Kiên curriculum despite the demands of school or the pressures of work and life outside; and it is the quiet fortitude to nurture an ideal of service, building steady shoulders ready to carry responsibility tomorrow.</p></div></div></div>"}, "summary": {"vi": "<ul><li>Đức Phật là con người lịch sử tự thân đạt giác ngộ, là bậc Thầy dẫn đường và tấm gương sáng cho học viên Bậc Kiên.</li><li>Ngài là hiện thân của ba đức tính: Đại Bi (tình thương vô điều kiện làm động lực dấn thân), Đại Trí (sự sáng suốt phá vỡ màn vô minh), Đại Dũng (sức mạnh nội tâm để vượt qua chính mình).</li><li>Mỗi đức tính có một bài học riêng cho học viên Bậc Kiên trên đường trở thành Huynh trưởng.</li></ul>", "en": "<ul><li>The Buddha was a historical human being who attained awakening through his own effort, and is both guiding teacher and shining example for Kiên-level students.</li><li>He embodies three qualities: Great Compassion (unconditional love as the motivation for engagement), Great Wisdom (the clarity that shatters the veil of ignorance), and Great Courage (an unmatched inner strength to overcome oneself).</li><li>Each comes with a lesson for Kiên-level students on the way to becoming a Huynh trưởng.</li></ul>"}}, {"id": "v-ket-luan", "title": {"vi": "KẾT LUẬN", "en": "CONCLUSION"}, "html": {"vi": "<p>Bi là động lực, TRÍ là phương hướng, DŨNG là nghị lực. Hành trình từ một Đoàn sinh ngành Thanh bước lên vai trò Huynh trưởng là một quá trình trưởng thành đầy ý nghĩa. Noi theo tấm gương Bi - Trí - Dũng của Đức Thế Tôn, hiểu rõ mục đích, đại cương của Phật pháp, chúng ta sẽ tìm thấy nguồn năng lượng ấm áp để bước những bước đi đầu tiên thật vững chãi. Lý tưởng cao đẹp đang chờ đón chúng ta phía trước, bắt đầu từ chính sự chuyển hóa tự thân ngay trong những ngày tu học Bậc Kiên này.</p>", "en": "<p>Compassion is the motivation, Wisdom is the direction, and Courage is the driving strength. The journey from a Đoàn sinh in the Thanh branch to the role of Huynh trưởng is a deeply meaningful process of growth. By following the example of Compassion – Wisdom – Courage set by the Buddha (Đức Thế Tôn), and by clearly understanding the purpose and overview of the Dharma, we will find the warm wellspring of energy to take our first, steady steps forward. A noble ideal awaits us ahead, and it begins with our own inner transformation, right here in these days of study at the Kiên level.</p>"}, "summary": {"vi": "<ul><li>Bi là động lực, Trí là phương hướng, Dũng là nghị lực.</li><li>Noi theo tấm gương Bi – Trí – Dũng và hiểu rõ mục đích, đại cương của Phật pháp, học viên sẽ tìm thấy nguồn năng lượng để bước những bước đầu tiên thật vững chãi.</li><li>Hành trình từ Đoàn sinh lên Huynh trưởng bắt đầu từ chính sự chuyển hóa tự thân.</li></ul>", "en": "<ul><li>Compassion is the motivation, Wisdom is the direction, and Courage is the driving strength.</li><li>By following the example of Compassion – Wisdom – Courage and clearly understanding the purpose and overview of the Dharma, students will find the energy to take their first steady steps.</li><li>The journey from Đoàn sinh to Huynh trưởng begins with their own inner transformation.</li></ul>"}}, {"id": "nguon", "title": {"vi": "Nguồn", "en": "Source"}, "html": {"vi": "<ul>\n<li><p>Mục Đích và Đại cương Phật pháp – Bậc Kiên 4 – 2022</p></li>\n<li><p>Giới thiệu về Tạng Luật - Tỳ khưu Indacanda<br />\n<a href=\"https://thuvienhoasen.org/a9789/gioi-thieu-ve-tang-luat\" target=\"_blank\" rel=\"noopener\">https://thuvienhoasen.org/a9789/gioi-thieu-ve-tang-luat</a></p></li>\n</ul>", "en": "<ul>\n<li><p>Mục Đích và Đại cương Phật pháp [The Purpose and Overview of the Dharma] — Bậc Kiên 4, 2022</p></li>\n<li><p>Giới thiệu về Tạng Luật [Introduction to the Vinaya Piṭaka] — Bhikkhu Indacanda<br />\n<a href=\"https://thuvienhoasen.org/a9789/gioi-thieu-ve-tang-luat\" target=\"_blank\" rel=\"noopener\">https://thuvienhoasen.org/a9789/gioi-thieu-ve-tang-luat</a></p></li>\n</ul>"}}], "footnotes": {"vi": {}, "en": {}}, "flashcards": [{"front": {"vi": "Chân thường", "en": "True Permanence (Chân thường)"}, "back": {"vi": "Thường hằng, không bị biến đổi bởi sinh diệt.", "en": "The unchanging, not subject to arising and ceasing."}}, {"front": {"vi": "Chân lạc", "en": "True Bliss (Chân lạc)"}, "back": {"vi": "Niềm an lạc chân thật khi tham ái, sân hận và si mê đã được đoạn trừ.", "en": "The genuine peace and joy that arises once craving, aversion, and delusion have been uprooted."}}, {"front": {"vi": "Chân ngã", "en": "True Self (Chân ngã)"}, "back": {"vi": "Chỉ sự tự tại của Niết-bàn, không nên hiểu là một bản ngã thường còn.", "en": "Referring to the sovereign freedom of Nirvana (Niết-bàn), not to be understood as a permanent ego."}}, {"front": {"vi": "Chân tịnh", "en": "True Purity (Chân tịnh)"}, "back": {"vi": "Chỉ sự thanh tịnh, trong sáng khi các phiền não đã được chuyển hóa và diệt trừ.", "en": "The clarity and purity that come once afflictions have been transformed and eliminated."}}, {"front": {"vi": "Pháp môn", "en": "Dharma door (pháp môn)"}, "back": {"vi": "Nghĩa là “cánh cửa pháp”: một phương pháp tu tập dẫn đến giác ngộ và giải thoát. Mỗi người có căn cơ khác nhau nên Đức Phật dạy nhiều pháp môn; “84.000 pháp môn” là con số biểu trưng cho sự phong phú ấy.", "en": "It means “door of the Dharma”: a method of practice that leads to awakening and liberation. Because people differ in capacity and disposition, the Buddha taught many Dharma doors; “84,000 Dharma doors” is a symbolic figure for that richness."}}, {"front": {"vi": "Kinh", "en": "Sutra (Kinh)"}, "back": {"vi": "Lời Phật dạy về giáo lý và pháp tu.", "en": "The Buddha's own words on doctrine and practice."}}, {"front": {"vi": "Luật", "en": "Vinaya (Luật)"}, "back": {"vi": "Những giới luật và quy tắc sinh hoạt do Đức Phật chế ra để giữ đời sống thanh tịnh và hòa hợp. Luật chủ yếu dành cho người xuất gia.", "en": "The precepts and rules of conduct established by the Buddha to preserve a pure and harmonious communal life. The Vinaya applies chiefly to monastics."}}, {"front": {"vi": "Luận", "en": "Treatises (Luận)"}, "back": {"vi": "Những lời giải thích, bàn luận của các vị đệ tử và tổ sư để làm rõ ý nghĩa sâu xa của Kinh và Luật.", "en": "Explanations and discussions by disciples and patriarchs that clarify the deeper meaning of the Sutras and the Vinaya."}}, {"front": {"vi": "Bắc tông", "en": "Northern tradition (Bắc tông)"}, "back": {"vi": "Chỉ truyền thống Đại thừa, phát triển ở Đông Á.", "en": "Refers to the Mahāyāna tradition, which developed in East Asia."}}, {"front": {"vi": "Nam tông", "en": "Southern tradition (Nam tông)"}, "back": {"vi": "Chỉ truyền thống Phật giáo Theravāda (Thượng tọa bộ), được truyền bá tại Nam Á và Đông Nam Á.", "en": "Refers to the Theravāda tradition of Buddhism (Thượng tọa bộ), which spread throughout South and Southeast Asia."}}, {"front": {"vi": "Bát chánh đạo", "en": "Noble Eightfold Path (Bát chánh đạo)"}, "back": {"vi": "Gồm 8 phần, là 8 nhánh của con đường dẫn đến giải thoát an vui bằng chính nỗ lực tu tập của mỗi người.", "en": "Eight parts – the eight branches of the path leading to liberation and well-being through each person's own effort in practice."}}, {"front": {"vi": "Nhóm Tuệ", "en": "Wisdom group (Tuệ)"}, "back": {"vi": "Chánh kiến – hiểu biết đúng đắn; Chánh tư duy – suy nghĩ đúng đắn.", "en": "Right View (Chánh kiến) – correct understanding; Right Thought (Chánh tư duy) – correct thinking."}}, {"front": {"vi": "Nhóm Giới", "en": "Ethical Conduct group (Giới)"}, "back": {"vi": "Chánh ngữ – lời nói đúng đắn; Chánh nghiệp – hành động đúng đắn; Chánh mạng – nghề nghiệp đúng đắn.", "en": "Right Speech (Chánh ngữ) – correct speech; Right Action (Chánh nghiệp) – correct conduct; Right Livelihood (Chánh mạng) – correct occupation."}}, {"front": {"vi": "Nhóm Định", "en": "Concentration group (Định)"}, "back": {"vi": "Chánh tinh tấn – cố gắng đúng đắn; Chánh niệm – nhớ nghĩ, chú tâm đúng đắn; Chánh định – tập trung đúng đắn.", "en": "Right Effort (Chánh tinh tấn) – correct effort; Right Mindfulness (Chánh niệm) – correct recollection and attention; Right Concentration (Chánh định) – correct focus."}}, {"front": {"vi": "Vô thường và duyên khởi", "en": "Impermanence (Vô thường) and Dependent Origination (Duyên khởi)"}, "back": {"vi": "Mọi sự vật đều do nhiều yếu tố liên kết mà thành, không tự nhiên mà có và cũng không do ai sinh ra. Sự thay đổi của một yếu tố sẽ làm thay đổi sự vật.", "en": "All things arise through the coming together of many interdependent factors; nothing exists spontaneously, and nothing is created by any single agent. A change in one factor brings about a change in the thing itself."}}, {"front": {"vi": "Luân hồi và nghiệp quả", "en": "Cycle of Birth and Death (Luân hồi) and Karma (Nghiệp quả)"}, "back": {"vi": "Theo giáo lý luân hồi, cái chết không phải là chấm hết mà là sự tiếp nối của một đời sống khác. Mọi hành động có chủ ý (nghiệp) đều tạo điều kiện cho quả tương ứng; tiến trình nghiệp và quả tiếp nối không ngừng.", "en": "According to the teaching of the cycle of birth and death, death is not an ending but a continuation into another life. Every intentional action creates the conditions for its corresponding result; this process of action and result continues without pause."}}, {"front": {"vi": "Văn", "en": "Listening (Văn)"}, "back": {"vi": "Học hỏi bằng cách nghe giảng giáo lý, đọc tụng kinh điển, pháp đàm với thái độ cởi mở, phải thao thức, muốn hiểu, muốn thực hành.", "en": "Learning by hearing teachings explained, reading and reciting scripture, and engaging in Dharma discussion with an open mind – approaching it with genuine eagerness, a wish to understand, and a wish to practice."}}, {"front": {"vi": "Tư", "en": "Reflecting (Tư)"}, "back": {"vi": "Suy ngẫm, tư duy, quán chiếu những điều mình nghe, đối chiếu với những kinh nghiệm mình trải qua trong cuộc sống để hiểu sâu hơn.", "en": "Contemplating, thinking through, and examining what one has heard, comparing it against one's own life experience in order to understand it more deeply."}}, {"front": {"vi": "Tu", "en": "Practicing (Tu)"}, "back": {"vi": "Thực hành, vận dụng những điều mình đã nghe, đã tư duy áp dụng vào chính đời sống để chuyển hóa khổ đau. Đó cũng chính là thực hành “Giới – Định – Tuệ” trong đời sống hằng ngày.", "en": "Putting into action, in one's own life, what one has heard and reflected on, in order to transform suffering. This is precisely the practice of “Ethical Conduct – Concentration – Wisdom” (Giới – Định – Tuệ) in daily life."}}, {"front": {"vi": "Đại Bi", "en": "Great Compassion (Đại Bi)"}, "back": {"vi": "Tình thương vô điều kiện, là động lực để dấn thân. Đức Phật không giữ sự an lạc cho riêng mình mà đi truyền dạy Chánh pháp cho mọi người.", "en": "Unconditional love as the motivation for engagement. The Buddha did not keep his peace for himself alone, but traveled to teach the Dharma to others."}}, {"front": {"vi": "Đại Trí", "en": "Great Wisdom (Đại Trí)"}, "back": {"vi": "Sự sáng suốt phá vỡ màn vô minh. Nhờ Đại Trí, Đức Phật thấu rõ các quy luật vận hành của đời sống (vô thường, duyên khởi, nghiệp quả) và căn cơ của từng người để dạy cho phù hợp.", "en": "The clarity that shatters the veil of ignorance. Through Great Wisdom, the Buddha understood the laws governing existence (impermanence, dependent origination, karma) and each person's capacity, so he could teach accordingly."}}, {"front": {"vi": "Đại Dũng", "en": "Great Courage (Đại Dũng)"}, "back": {"vi": "Sức mạnh nội tâm để vượt qua chính mình, không phải sức mạnh bạo lực. Là sức mạnh chiến thắng ma quân – tức phiền não và tham ái trong tâm – và bình thản đối mặt với mọi chông gai.", "en": "An inner strength to overcome oneself, not the strength of violence. It is the strength to conquer the army of Māra – the afflictions and cravings within the mind – and to face every hardship with composure."}}], "quiz": [{"q": {"vi": "Theo tài liệu, Giáo pháp của Đức Phật là gì?", "en": "According to the document, what is the Buddha's Dharma?"}, "options": {"vi": ["Một học thuyết để tin suông", "Con đường thực hành và tự chứng nghiệm", "Một hệ thống học thuyết khô cứng", "Một nghi lễ để cầu nguyện thần linh"], "en": ["A doctrine to be believed blindly", "A path of practice and direct, personal realization", "A rigid system of doctrine", "A ritual of prayer to the gods"]}, "correct": 1, "explain": {"vi": "Mục I: “không phải là một học thuyết để tin suông mà là con đường thực hành và tự chứng nghiệm”.", "en": "Section I: “not a doctrine to be believed blindly, but a path of practice and direct, personal realization”."}, "level": "medium"}, {"q": {"vi": "“Chân ngã” trong tài liệu chỉ điều gì?", "en": "In the document, what does “True Self” (Chân ngã) refer to?"}, "options": {"vi": ["Niềm an lạc khi tham ái, sân hận, si mê đã được đoạn trừ", "Sự thanh tịnh khi phiền não đã được chuyển hóa", "Sự tự tại của Niết-bàn", "Một bản ngã thường còn"], "en": ["The joy that arises once craving, aversion, and delusion have been uprooted", "The purity that comes once afflictions have been transformed", "The sovereign freedom of Nirvana", "A permanent ego"]}, "correct": 2, "explain": {"vi": "Mục I.c: “chỉ sự tự tại của Niết-bàn, không nên hiểu là một bản ngã thường còn”. A là Chân lạc, B là Chân tịnh.", "en": "Section I.c: “referring to the sovereign freedom of Nirvana, not to be understood as a permanent ego”. A is True Bliss, B is True Purity."}, "level": "medium"}, {"q": {"vi": "Hình ảnh “ngón tay chỉ mặt trăng” nhắc người học điều gì?", "en": "What does the image of “a finger pointing at the moon” remind learners?"}, "options": {"vi": ["Nên chấp giữ giáo pháp suốt cả cuộc đời", "Ngôn ngữ có thể truyền đạt trọn vẹn chân lý", "Giáo pháp là gánh nặng cần bỏ ngay từ đầu", "Lời dạy chỉ là phương tiện hướng đến chân lý, không phải chính sự chứng ngộ"], "en": ["To cling to the teaching for a whole lifetime", "That language can fully convey the truth", "That the Dharma is a burden to be dropped from the start", "That teachings are only a means toward the truth, not the realization itself"]}, "correct": 3, "explain": {"vi": "Mục I: “không nên đồng nhất lời dạy với sự chứng ngộ chân lý”.", "en": "Section I: “the teaching should therefore never be mistaken for the realization of truth itself”."}, "level": "medium"}, {"q": {"vi": "Ba tạng kinh điển (Tam tạng) gồm những gì?", "en": "What do the Three Baskets of scripture (Tam tạng) consist of?"}, "options": {"vi": ["Kinh, Giới, Định", "Văn, Tư, Tu", "Kinh, Luật, Luận", "Tuệ, Giới, Định"], "en": ["Sutra, Ethical Conduct, Concentration", "Listening, Reflecting, Practicing", "Sutra, Vinaya, Treatises", "Wisdom, Ethical Conduct, Concentration"]}, "correct": 2, "explain": {"vi": "Mục II: ba tạng là Kinh, Luật, Luận.", "en": "Section II: the Three Baskets are Sutra (Kinh), Vinaya (Luật), Treatises (Luận)."}, "level": "medium"}, {"q": {"vi": "Theo tài liệu, bộ Luật chủ yếu dành cho đối tượng nào?", "en": "According to the document, who is the Vinaya chiefly intended for?"}, "options": {"vi": ["Người xuất gia", "Người tại gia", "Học viên ngành Thanh", "Tất cả mọi người như nhau"], "en": ["Monastics", "Lay practitioners", "Students of the Thanh branch", "Everyone equally"]}, "correct": 0, "explain": {"vi": "Mục II: “Luật chủ yếu dành cho người xuất gia”.", "en": "Section II: “The Vinaya applies chiefly to monastics”."}, "level": "medium"}, {"q": {"vi": "Bát chánh đạo được sắp xếp thành ba nhóm nào?", "en": "Into which three groups is the Noble Eightfold Path organized?"}, "options": {"vi": ["Văn, Tư, Tu", "Bi, Trí, Dũng", "Kinh, Luật, Luận", "Tuệ, Giới, Định"], "en": ["Listening, Reflecting, Practicing", "Compassion, Wisdom, Courage", "Sutra, Vinaya, Treatises", "Wisdom, Ethical Conduct, Concentration"]}, "correct": 3, "explain": {"vi": "Mục II: “được sắp xếp thành ba nhóm: Tuệ, Giới và Định”.", "en": "Section II: “organized into three groups: Wisdom (Tuệ), Ethical Conduct (Giới), and Concentration (Định)”."}, "level": "medium"}, {"q": {"vi": "Trong bảng Bát chánh đạo, “Chánh niệm” được mô tả là gì?", "en": "In the document's table of the Noble Eightfold Path, how is “Right Mindfulness” (Chánh niệm) described?"}, "options": {"vi": ["Lời nói đúng đắn", "Nhớ nghĩ, chú tâm đúng đắn", "Cố gắng đúng đắn", "Tập trung đúng đắn"], "en": ["Correct speech", "Correct recollection and attention", "Correct effort", "Correct focus"]}, "correct": 1, "explain": {"vi": "Mục II, bảng nhóm Định: “Chánh niệm – nhớ nghĩ, chú tâm đúng đắn”.", "en": "Section II, Concentration row: “Right Mindfulness (Chánh niệm) – correct recollection and attention”."}, "level": "medium"}, {"q": {"vi": "Theo quy luật vô thường và duyên khởi, mọi sự vật hình thành như thế nào?", "en": "According to the law of impermanence and dependent origination, how do all things come to be?"}, "options": {"vi": ["Do nhiều yếu tố liên kết mà thành", "Tự nhiên mà có, không cần điều kiện nào", "Do một đấng nào đó sinh ra", "Giữ nguyên mãi mà không thay đổi"], "en": ["Through the coming together of many interdependent factors", "Spontaneously, with no conditions needed", "Created by some single agent", "They remain forever unchanged"]}, "correct": 0, "explain": {"vi": "Mục II.a: “do nhiều yếu tố liên kết mà thành, không tự nhiên mà có và cũng không do ai sinh ra”.", "en": "Section II.a: “all things arise through the coming together of many interdependent factors; nothing exists spontaneously, and nothing is created by any single agent”."}, "level": "medium"}, {"q": {"vi": "“Tu” trong lộ trình Văn – Tư – Tu có nghĩa là gì?", "en": "What does “Practicing” (Tu) mean in the path of Listening – Reflecting – Practicing?"}, "options": {"vi": ["Nghe giảng, đọc tụng kinh điển, pháp đàm", "Suy ngẫm, đối chiếu với kinh nghiệm sống", "Thực hành, vận dụng điều đã nghe và đã tư duy vào đời sống", "Ghi nhớ thật kỹ lời dạy trong kinh điển"], "en": ["Hearing teachings and reciting scripture", "Contemplating and comparing teachings with life experience", "Putting into action in one's own life what one has heard and reflected on", "Carefully memorizing the teachings in the scriptures"]}, "correct": 2, "explain": {"vi": "Mục III: “Tu là thực hành, vận dụng những điều mình đã nghe, đã tư duy áp dụng vào chính đời sống”. A là Văn, B là Tư.", "en": "Section III: “putting into action, in one's own life, what one has heard and reflected on, in order to transform suffering”. A is Listening, B is Reflecting."}, "level": "medium"}, {"q": {"vi": "Theo tài liệu, người tại gia có giới căn bản nào để thực hành, và những giới ấy được ghi ở đâu?", "en": "According to the document, which foundational precepts do lay practitioners have, and where are they recorded?"}, "options": {"vi": ["Năm giới, Thập thiện giới, Bát quan trai giới, Bồ Tát Giới tại gia – ghi trong Luật tạng", "Chỉ Năm giới và Thập thiện giới – ghi trong Kinh tạng và Luận tạng", "Năm giới, Thập thiện giới, Bát quan trai giới, Bồ Tát Giới tại gia – ghi trong Kinh tạng và Luận tạng", "Người tại gia không có giới nào, vì Luật chỉ dành cho người xuất gia"], "en": ["Five Precepts, Ten Good Precepts, Eight Precepts, lay Bodhisattva Precepts – recorded in the Vinaya Basket", "Only the Five Precepts and the Ten Good Precepts – recorded in the Sutra Basket and the Treatise Basket", "Five Precepts, Ten Good Precepts, Eight Precepts, lay Bodhisattva Precepts – recorded in the Sutra Basket and the Treatise Basket", "None, since the Vinaya is only for monastics"]}, "correct": 2, "explain": {"vi": "Mục II (Luật): người tại gia “cũng có giới căn bản… như Năm giới, Thập thiện giới, Bát quan trai giới, Bồ Tát Giới tại gia… được ghi trong Kinh tạng và Luận tạng”.", "en": "Section II (Vinaya): lay practitioners “likewise have foundational precepts to observe — such as the Five Precepts, the Ten Good Precepts (Thập thiện giới), the Eight Precepts, and the lay Bodhisattva Precepts — recorded within the Sutra Basket and the Treatise Basket”."}, "level": "advanced"}, {"q": {"vi": "Theo tài liệu, “giữ giới” giúp ích trực tiếp điều gì?", "en": "According to the document, what does keeping the precepts directly help with?"}, "options": {"vi": ["Giúp tâm không buông lung và dễ đạt định", "Giúp nhận ra tầm quan trọng của giới luật", "Tạo điều kiện để trí tuệ tiếp tục phát triển", "Giúp tìm hiểu nguyên nhân của khổ đau"], "en": ["It keeps the mind from running loose and makes concentration easier to attain", "It helps us recognize the importance of ethical discipline", "It creates the conditions for wisdom to keep developing", "It helps us investigate the causes of suffering"]}, "correct": 0, "explain": {"vi": "Mục II: “giữ giới giúp tâm không buông lung và dễ đạt định”. B là vai trò của trí tuệ, C là vai trò của định tâm.", "en": "Section II: “keeping the precepts keeps the mind from running loose and makes concentration easier to attain”. B is the role of wisdom, C is the role of a concentrated mind."}, "level": "advanced"}, {"q": {"vi": "Theo bài học Đại Trí, học viên Bậc Kiên ứng dụng lộ trình “Văn – Tư – Tu” vào thực tế bằng cách nào?", "en": "According to the Great Wisdom lesson, how do Kiên-level students apply the path of “Listening – Reflecting – Practicing” to real life?"}, "options": {"vi": ["Nghe Pháp, học Bậc Kiên chủ yếu để mở rộng thật nhiều kiến thức Phật pháp", "Đặt niềm tin trọn vẹn vào lời dạy mà không cần đối chiếu với đời sống", "Đợi đến khi làm Huynh trưởng mới bắt đầu vận dụng điều đã học", "Nghe Pháp, học Bậc Kiên rồi suy ngẫm, đối chiếu với cuộc sống của chính mình"], "en": ["By listening and studying mainly to gather as much knowledge of the Dharma as possible", "By placing complete trust in the teaching without comparing it to life", "By waiting until they become a Huynh trưởng to begin applying what they learned", "By listening and studying, then reflecting on it and weighing it against their own lives"]}, "correct": 3, "explain": {"vi": "Mục IV.2: học “không chỉ để mở rộng kiến thức Phật pháp, mà còn để suy ngẫm, đối chiếu với cuộc sống”.", "en": "Section IV.2: “not only to broaden our knowledge of the teaching, but also to reflect on it and weigh it against our own lives”."}, "level": "advanced"}, {"q": {"vi": "Trong phần Đại Dũng, “ma quân” biểu trưng cho điều gì?", "en": "In the Great Courage section, what does “the army of Māra” (ma quân) symbolize?"}, "options": {"vi": ["Những kẻ thù bên ngoài cản trở Đức Phật", "Những phiền não và tham ái trong tâm", "Những định kiến giai cấp của xã hội", "Áp lực bài vở và công việc của người học"], "en": ["External enemies obstructing the Buddha", "The afflictions and cravings within the mind", "The harsh caste prejudices of society", "The pressures of schoolwork and jobs on learners"]}, "correct": 1, "explain": {"vi": "Mục IV.3: “ma quân – biểu trưng cho những phiền não và tham ái trong tâm”.", "en": "Section IV.3: “the army of Māra – symbolizing the afflictions and cravings within the mind”."}, "level": "advanced"}, {"q": {"vi": "Một người đã vượt qua khổ đau nhưng vẫn mang giáo pháp như một gánh nặng. Hình ảnh nào trong tài liệu nhắc nhở điều này?", "en": "A person has crossed over suffering but still carries the teaching as a burden. Which image in the document speaks to this?"}, "options": {"vi": ["Ngón tay chỉ mặt trăng", "Chiếc bè qua sông", "Chân lý vượt ngoài ngôn ngữ", "Ngọn đuốc sáng"], "en": ["A finger pointing at the moon", "A raft for crossing the river", "Truth beyond language", "A bright torch"]}, "correct": 1, "explain": {"vi": "Mục I: “Khi đã đạt mục đích, người học không nên chấp giữ giáo pháp như một gánh nặng”.", "en": "Section I: “Once the goal has been reached, the practitioner should not cling to the teaching as though it were a burden to be carried forever”."}, "level": "advanced"}, {"q": {"vi": "Trong bài học Đại Dũng, “can đảm nhìn nhận và sửa chữa những khuyết điểm của bản thân” gắn với yếu tố nào của Bát chánh đạo?", "en": "In the Great Courage lesson, “the bravery to recognize and correct one's own shortcomings” is linked to which factor of the Noble Eightfold Path?"}, "options": {"vi": ["Chánh tinh tấn", "Chánh ngữ", "Chánh kiến", "Chánh tư duy"], "en": ["Right Effort (Chánh tinh tấn)", "Right Speech (Chánh ngữ)", "Right View (Chánh kiến)", "Right Thought (Chánh tư duy)"]}, "correct": 0, "explain": {"vi": "Mục IV.3: “…sửa chữa những khuyết điểm của bản thân (Chánh tinh tấn)”. Chánh kiến và Chánh tư duy được gắn với Đại Trí (IV.2).", "en": "Section IV.3: “the bravery to recognize and correct one's own shortcomings (Right Effort)”. Right View and Right Thought are linked to Great Wisdom (IV.2)."}, "level": "advanced"}]}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('artifact-data').textContent);
+const ACCENTS = ['sage','lotus','saffron','sky','sage','lotus','saffron'];
+
+const STR = {
+  vi: {
+    read:'Đọc', flash:'Flashcard', quiz:'Trắc nghiệm',
+    heroKicker:'GĐPT · Tài liệu tu học',
+    continueReadPrefix:'Đã đọc', continueReadBtn:'Tiếp tục: Flashcard',
+    startFlash:'Bắt đầu Flashcard',
+    flashBackHint:'Chạm để lật lại', flashFrontHint:'Chạm để xem giải nghĩa',
+    flashOf:'Thẻ', flashContinue:'Tiếp tục: Trắc nghiệm',
+    quizOf:'Câu', quizNext:'Câu tiếp theo', quizSubmit:'Nộp bài',
+    quizStart:'Bắt đầu trắc nghiệm',
+    resultsTitle:'Kết quả của anh/chị', resultsScoreOf:'trên',
+    congrats:'Chúc mừng anh chị đã hoàn thành kiến thức cơ bản trước khi bắt đầu buổi học!',
+    reviewTitle:'Xem lại đáp án', backToStart:'Về đầu tài liệu',
+    fnTag:'Ghi chú',
+    footnoteHeading:'Chú thích',
+    stepsTitle:'Quy trình 3 bước',
+    step1:'Hoàn thành đọc tài liệu', step2:'Hoàn thành Flashcard', step3:'Hoàn thành Trắc nghiệm',
+    summaryShow:'Xem tóm tắt', summaryHide:'Ẩn tóm tắt', summaryTag:'Tóm tắt nhanh · không thay thế nguyên văn',
+    summaryReadFull:'Đọc toàn văn', collapse:'Thu gọn',
+    lvPickTitle:'Chọn mức độ trắc nghiệm', lvPickSub:'Mỗi lần làm, thứ tự câu hỏi và các đáp án được xáo trộn ngẫu nhiên.',
+    lvMedium:'Mức 1 · Trung bình', lvAdvanced:'Mức 2 · Nâng cao',
+    lvMediumDesc:'Kiểm tra kiến thức cốt lõi sau khi đọc.', lvAdvancedDesc:'Vận dụng, phân tích và so sánh các khái niệm.',
+    lvQuestions:'câu', lvLocked:'Hoàn thành Mức 1 để mở khóa', lvDone:'Đã hoàn thành',
+    lvStart:'Bắt đầu', lvRetake:'Làm lại mức này (xáo trộn)', lvOther:'Chọn mức khác', lvTryAdv:'Thử thách Mức 2 · Nâng cao',
+    lvShuffled:'Thứ tự câu hỏi & đáp án đã được xáo trộn',
+    levelName_medium:'Trung bình', levelName_advanced:'Nâng cao',
+  },
+  en: {
+    read:'Read', flash:'Flashcards', quiz:'Quiz',
+    heroKicker:'GĐPT · Study Document',
+    continueReadPrefix:'Read', continueReadBtn:'Continue: Flashcards',
+    startFlash:'Start Flashcards',
+    flashBackHint:'Tap to flip back', flashFrontHint:'Tap to see the meaning',
+    flashOf:'Card', flashContinue:'Continue: Quiz',
+    quizOf:'Question', quizNext:'Next question', quizSubmit:'Submit',
+    quizStart:'Start Quiz',
+    resultsTitle:'Your Results', resultsScoreOf:'out of',
+    congrats:"Congratulations — you've completed the core knowledge before the session begins!",
+    reviewTitle:'Review Answers', backToStart:'Back to top',
+    fnTag:'Note',
+    footnoteHeading:'Footnote',
+    stepsTitle:'3-Step Process',
+    step1:'Finish Reading', step2:'Finish Flashcards', step3:'Finish Quiz',
+    summaryShow:'View summary', summaryHide:'Hide summary', summaryTag:'Quick summary · does not replace the full text',
+    summaryReadFull:'Read full text', collapse:'Collapse',
+    lvPickTitle:'Choose your quiz level', lvPickSub:'Each attempt shuffles the order of the questions and the answer options.',
+    lvMedium:'Level 1 · Intermediate', lvAdvanced:'Level 2 · Advanced',
+    lvMediumDesc:'Checks the core knowledge after reading.', lvAdvancedDesc:'Application, analysis and comparison of concepts.',
+    lvQuestions:'questions', lvLocked:'Complete Level 1 to unlock', lvDone:'Completed',
+    lvStart:'Start', lvRetake:'Retake this level (shuffled)', lvOther:'Choose another level', lvTryAdv:'Take the Level 2 · Advanced challenge',
+    lvShuffled:'Questions and answer options have been shuffled',
+    levelName_medium:'Intermediate', levelName_advanced:'Advanced',
+  }
+};
+
+let state = {
+  lang:'vi',
+  stage:'read', // read | flash | quiz | results
+  readSet: new Set(),
+  miniOpen: new Set(),
+  flashIndex:0,
+  flashFlipped:false,
+  flashSeen:new Set(),
+  summaryOpen: new Set(),
+  quizLevel:null,      // 'medium' | 'advanced' | null (picker)
+  quizSession:null,    // [{qi, perm}] shuffled order of this attempt
+  quizIndex:0,
+  quizAnswers:{},      // session position -> DISPLAYED option index
+  quizSubmitted:false,
+  levelDone:{},        // {medium:true, advanced:true}
+};
+
+function t(key){ return STR[state.lang][key]; }
+try{ document.title = DATA.meta.title.vi || DATA.meta.title.en || document.title; }catch(e){}
+
+function setLang(l){
+  state.lang = l;
+  document.getElementById('btnLangVi').classList.toggle('active', l==='vi');
+  document.getElementById('btnLangEn').classList.toggle('active', l==='en');
+  document.documentElement.lang = l;
+  render();
+}
+
+/* ---------------- HEADER / PROGRESS ---------------- */
+function renderHeader(){
+  const notRead = state.stage!=='read';
+  document.getElementById('topBackBtn').classList.toggle('show', notRead);
+  document.getElementById('topBackLabel').textContent = state.lang==='vi' ? 'Đọc tài liệu' : 'Read document';
+  document.querySelectorAll('[data-i18n-label]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-label');
+    el.textContent = t(k);
+  });
+  const total = DATA.sections.length;
+  const readPct = Math.round((state.readSet.size/total)*100);
+  document.getElementById('pbRead').style.width = readPct+'%';
+  const flashPct = Math.round((state.flashSeen.size/DATA.flashcards.length)*100);
+  document.getElementById('pbFlash').style.width = (state.stage==='read'?0:flashPct)+'%';
+  const answered = Object.keys(state.quizAnswers).length;
+  const sessLen = state.quizSession ? state.quizSession.length : 0;
+  const quizPct = state.quizSubmitted ? 100 : (sessLen ? Math.round((answered/sessLen)*100) : 0);
+  document.getElementById('pbQuiz').style.width = ((state.stage==='read'||state.stage==='flash')?0:quizPct)+'%';
+
+  document.querySelectorAll('.progress-step').forEach(el=>{
+    const s = el.getAttribute('data-stage');
+    el.classList.toggle('current', s===state.stage || (state.stage==='results' && s==='quiz'));
+  });
+}
+
+/* ---------------- FOOTNOTE MODAL ---------------- */
+function openFn(n){
+  document.getElementById('fnTag').textContent = t('fnTag')+' '+n;
+  document.getElementById('fnBody').textContent = DATA.footnotes[state.lang][n];
+  document.getElementById('fnModal').classList.add('show');
+}
+function closeFn(e){
+  document.getElementById('fnModal').classList.remove('show');
+}
+document.addEventListener('click', function(e){
+  const btn = e.target.closest('.fn-ref');
+  if(btn){ openFn(btn.getAttribute('data-fn')); }
+});
+
+/* ---------------- STAGE: READ ---------------- */
+function renderRead(){
+  const root = document.getElementById('stageRead');
+  const lang = state.lang;
+  let html = `
+    <div class="hero">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--sage-ink);text-transform:uppercase;margin-bottom:6px;">${(DATA.meta.kicker && DATA.meta.kicker[lang]) || t('heroKicker')}</div>
+      <h1>${DATA.meta.title[lang]}</h1>
+      <div class="subtitle">${DATA.meta.subtitle[lang]}</div>
+    </div>
+    <div class="steps-guide">
+      <div class="steps-guide-title">${t('stepsTitle')}</div>
+      <div class="step-chip s1"><span class="step-num">1</span>${t('step1')}</div>
+      <span class="step-arrow">→</span>
+      <div class="step-chip s2"><span class="step-num">2</span>${t('step2')}</div>
+      <span class="step-arrow">→</span>
+      <div class="step-chip s3"><span class="step-num">3</span>${t('step3')}</div>
+    </div>
+  `;
+  DATA.sections.forEach((sec, i)=>{
+    const accent = ACCENTS[i % ACCENTS.length];
+    const isOpen = sec._open;
+    const isRead = state.readSet.has(sec.id);
+    const hasSum = !!(sec.summary && sec.summary[lang]);
+    const sumOpen = hasSum && state.summaryOpen.has(sec.id);
+    const summaryHtml = hasSum ? `
+        <div class="summary-bar"><button class="summary-btn ${sumOpen?'on':''}" onclick="toggleSummary('${sec.id}')" aria-expanded="${sumOpen}">
+          <span aria-hidden="true">💡</span>${sumOpen?t('summaryHide'):t('summaryShow')}
+          <svg class="sb-chev" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button></div>
+        ${sumOpen?`<div class="summary-panel"><span class="sp-tag">${t('summaryTag')}</span>${sec.summary[lang]}
+          <div class="summary-actions">
+            ${isOpen?'':`<button onclick="openFull('${sec.id}')">${t('summaryReadFull')}</button>`}
+            <button onclick="toggleSummary('${sec.id}')">${t('summaryHide')}</button>
+          </div></div>`:''}` : '';
+    html += `
+      <div class="section-card ${isOpen?'open':''}" style="--accent:var(--${accent});--accent-bg:var(--${accent}-bg);--accent-ink:var(--${accent}-ink);">
+        <button class="section-head" onclick="toggleSection('${sec.id}')">
+          <span class="num ${isRead?'check':''}">${isRead ? '✓' : (i+1)}</span>
+          <span class="htitle">${sec.title[lang]}</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        ${summaryHtml}
+        <div class="section-body">
+          <div class="section-body-inner">${sec.html[lang]}${isOpen ? `<button class="collapse-btn" onclick="toggleSection('${sec.id}')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${t('collapse')}</button>` : ''}</div>
+        </div>
+      </div>
+    `;
+  });
+  root.innerHTML = html;
+
+  // inject timeline into its placeholder (Part 2)
+  const tlHost = root.querySelector('#__TIMELINE__');
+  if(tlHost){ tlHost.outerHTML = renderTimelineHtml(lang); }
+
+  // apply persisted mini-accordion open states
+  root.querySelectorAll('.mini-acc').forEach(el=>{
+    if(state.miniOpen.has(el.getAttribute('data-mid'))) el.classList.add('open');
+  });
+}
+function toggleSection(id){
+  const sec = DATA.sections.find(s=>s.id===id);
+  sec._open = !sec._open;
+  if(sec._open){ state.readSet.add(id); }
+  renderRead();
+  renderContinueBar();
+  renderHeader();
+}
+function toggleSummary(id){
+  if(state.summaryOpen.has(id)) state.summaryOpen.delete(id); else state.summaryOpen.add(id);
+  renderRead();
+}
+function openFull(id){
+  const sec = DATA.sections.find(s=>s.id===id);
+  sec._open = true; state.readSet.add(id);
+  state.summaryOpen.delete(id);
+  renderRead(); renderContinueBar(); renderHeader();
+}
+function toggleMini(btn){
+  const wrap = btn.closest('.mini-acc');
+  const mid = wrap.getAttribute('data-mid');
+  if(state.miniOpen.has(mid)) state.miniOpen.delete(mid); else state.miniOpen.add(mid);
+  renderRead();
+}
+
+/* ---------------- TIMELINE ---------------- */
+function renderTimelineHtml(lang){
+  const nodes = DATA.timeline.map(pt=>`
+    <button class="timeline-node" onclick="openThinker('${pt.anchor}')">
+      <span class="tl-line"></span>
+      <span class="tl-dot"></span>
+      <span class="tl-year">${pt.year}</span>
+      <span class="tl-name">${pt.name}</span>
+      <span class="tl-idea">${pt.idea[lang]}</span>
+    </button>
+  `).join('');
+  const title = (DATA.meta.timelineTitle && DATA.meta.timelineTitle[lang]) || (lang==='vi' ? 'Dòng thời gian' : 'Timeline');
+  return `<div class="timeline-wrap"><div class="timeline-title">${title}</div><div class="timeline-track">${nodes}</div></div>`;
+}
+function openThinker(anchor){
+  const needle = 'id="'+anchor+'"';
+  const sec = DATA.sections.find(s=>((s.html.vi||'')+(s.html.en||'')).includes(needle)) || DATA.sections.find(s=>s.id==='part2') || DATA.sections[0];
+  sec._open = true;
+  state.readSet.add(sec.id);
+  renderRead();
+  renderHeader();
+  renderContinueBar();
+  requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      const el = document.getElementById(anchor);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }, 60);
+  });
+}
+function goToRead(){
+  state.stage = 'read';
+  renderAll();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ---------------- STAGE: FLASHCARDS ---------------- */
+function renderFlash(){
+  const root = document.getElementById('stageFlash');
+  const lang = state.lang;
+  const cards = DATA.flashcards;
+  const i = state.flashIndex;
+  const card = cards[i];
+  const accent = ACCENTS[i % ACCENTS.length];
+  state.flashSeen.add(i);
+  const dots = cards.map((c,idx)=>`<span class="flash-dot ${state.flashSeen.has(idx)?'seen':''} ${idx===i?'current':''}"></span>`).join('');
+  root.innerHTML = `
+    <div class="flash-wrap">
+      <div class="flash-counter">${t('flashOf')} ${i+1} / ${cards.length}</div>
+      <div class="flash-scene">
+        <div class="flash-card ${state.flashFlipped?'flipped':''}" id="flashCardEl" onclick="flipCard()" style="--accent:var(--${accent});--accent-bg:var(--${accent}-bg);--accent-ink:var(--${accent}-ink);">
+          <div class="flash-face front">
+            <div class="flash-face-content">
+              <div class="kicker">${lang==='vi'?'Thuật ngữ':'Term'}</div>
+              <div class="term">${card.front[lang]}</div>
+              <div class="tap-hint">${t('flashFrontHint')}</div>
+            </div>
+          </div>
+          <div class="flash-face back">
+            <div class="flash-face-content">
+              <div class="kicker">${lang==='vi'?'Giải nghĩa':'Meaning'}</div>
+              <div class="term-repeat">${card.front[lang]}</div>
+              <div class="def">${card.back[lang]}</div>
+              <div class="tap-hint">${t('flashBackHint')}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flash-nav">
+        <button class="iconbtn" onclick="flashPrev()" ${i===0?'disabled':''} aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="iconbtn" onclick="flashNext()" ${i===cards.length-1?'disabled':''} aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="flash-dot-row">${dots}</div>
+    </div>
+  `;
+  renderHeader();
+  renderContinueBar();
+}
+function flipCard(){
+  state.flashFlipped = !state.flashFlipped;
+  renderFlash();
+  const el = document.getElementById('flashCardEl');
+  if(el){
+    const cls = state.flashFlipped ? 'flip-to-back' : 'flip-to-front';
+    el.classList.add(cls);
+    el.addEventListener('animationend', function handler(){
+      el.classList.remove('flip-to-back','flip-to-front');
+      el.removeEventListener('animationend', handler);
+    });
+  }
+}
+function flashPrev(){ if(state.flashIndex>0){ state.flashIndex--; state.flashFlipped=false; renderFlash(); } }
+function flashNext(){ if(state.flashIndex<DATA.flashcards.length-1){ state.flashIndex++; state.flashFlipped=false; renderFlash(); } }
+
+/* ---------------- STAGE: QUIZ (v2: 2 levels + shuffle) ---------------- */
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function levelOf(q){ return q.level==='advanced' ? 'advanced' : 'medium'; }
+function questionsOfLevel(level){
+  const out=[]; DATA.quiz.forEach((q,i)=>{ if(levelOf(q)===level) out.push(i); }); return out;
+}
+function levelsAvailable(){ return ['medium','advanced'].filter(l=>questionsOfLevel(l).length>0); }
+function isLevelLocked(level){
+  if(level!=='advanced') return false;
+  if(DATA.meta.gateAdvanced===false) return false;
+  return questionsOfLevel('medium').length>0 && !state.levelDone.medium;
+}
+/* Option order is a permutation of INDICES, so it is language-toggle safe:
+   VI and EN option arrays must have the same order (same index = same option). */
+function makePerm(q){
+  const n = (q.options.vi || q.options.en).length;
+  const id = Array.from({length:n}, (_,i)=>i);
+  return q.lockOptions ? id : shuffle(id);
+}
+function initQuizSession(level){
+  state.quizLevel = level;
+  state.quizSession = shuffle(questionsOfLevel(level)).map(qi=>({qi, perm:makePerm(DATA.quiz[qi])}));
+  state.quizAnswers = {};
+  state.quizIndex = 0;
+  state.quizSubmitted = false;
+}
+function startQuiz(level){
+  if(isLevelLocked(level)) return;
+  initQuizSession(level);
+  state.stage = 'quiz';
+  renderAll();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function pickAnotherLevel(){
+  state.quizLevel = null; state.quizSession = null; state.quizAnswers = {}; state.quizIndex = 0; state.quizSubmitted = false;
+  state.stage = 'quiz';
+  renderAll();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function renderQuizPicker(){
+  const root = document.getElementById('stageQuiz');
+  const lang = state.lang;
+  const cards = levelsAvailable().map(l=>{
+    const n = questionsOfLevel(l).length;
+    const locked = isLevelLocked(l);
+    const done = !!state.levelDone[l];
+    const nameKey = l==='medium' ? 'lvMedium' : 'lvAdvanced';
+    const descKey = l==='medium' ? 'lvMediumDesc' : 'lvAdvancedDesc';
+    return `<button class="level-card lvl-${l}" ${locked?'disabled':''} onclick="startQuiz('${l}')">
+      <div class="lv-name">${locked?'🔒':(done?'✅':(l==='medium'?'🌱':'🔥'))} ${t(nameKey)}</div>
+      <div class="lv-meta">${n} ${t('lvQuestions')}${done?' · '+t('lvDone'):''}${locked?' · '+t('lvLocked'):''}</div>
+      <div class="lv-desc">${t(descKey)}</div>
+    </button>`;
+  }).join('');
+  root.innerHTML = `
+    <div class="level-intro">${t('lvPickTitle')}</div>
+    <div class="level-sub">${t('lvPickSub')}</div>
+    ${cards}
+  `;
+  renderHeader();
+  renderContinueBar();
+}
+function renderQuiz(){
+  const root = document.getElementById('stageQuiz');
+  const lang = state.lang;
+  if(!state.quizSession){
+    const lv = levelsAvailable();
+    if(lv.length>1){ renderQuizPicker(); return; }
+    initQuizSession(lv[0] || 'medium');
+  }
+  const sess = state.quizSession;
+  const i = state.quizIndex;
+  const item = sess[i];
+  const q = DATA.quiz[item.qi];
+  const answered = state.quizAnswers[i];
+  const correctShown = item.perm.indexOf(q.correct);
+  const dots = sess.map((_,idx)=>`<button class="quiz-dot ${state.quizAnswers[idx]!==undefined?'answered':''} ${idx===i?'current':''}" onclick="goToQuizQuestion(${idx})">${idx+1}</button>`).join('');
+
+  let optionsHtml = '';
+  item.perm.forEach((orig, shown)=>{
+    let cls = 'quiz-option';
+    if(answered!==undefined){
+      if(shown===correctShown) cls += ' correct';
+      else if(shown===answered) cls += ' wrong';
+    }
+    optionsHtml += `<button class="${cls}" onclick="answerQuiz(${shown})" ${answered!==undefined?'disabled':''}>${q.options[lang][orig]}</button>`;
+  });
+
+  let explainHtml = '';
+  if(answered!==undefined){
+    explainHtml = `<div class="quiz-explain">${q.explain[lang]}</div>
+    <button class="quiz-retry-btn" onclick="retryQuestion(${i})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 1 3 6.7M3 12V7m0 5h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      ${lang==='vi'?'Trả lời lại câu này':'Answer this again'}
+    </button>`;
+  }
+
+  const isLast = i === sess.length-1;
+  let nextBtn = '';
+  if(answered!==undefined){
+    nextBtn = `<button class="btn" onclick="${isLast?'submitQuiz()':'quizNext()'}">${isLast? t('quizSubmit') : t('quizNext')}</button>`;
+  }
+  const lv = levelOf(q);
+  root.innerHTML = `
+    <div class="quiz-dot-row">${dots}</div>
+    <div class="quiz-progress">${t('quizOf')} ${i+1} / ${sess.length}</div>
+    <span class="level-chip lvl-${lv}">${t('levelName_'+lv)}</span>
+    <div class="quiz-q">${q.q[lang]}</div>
+    <div class="quiz-options">${optionsHtml}</div>
+    ${explainHtml}
+    ${nextBtn}
+  `;
+  renderHeader();
+  renderContinueBar();
+}
+function answerQuiz(shown){
+  state.quizAnswers[state.quizIndex] = shown;
+  renderQuiz();
+}
+function quizNext(){
+  if(state.quizIndex < state.quizSession.length-1){ state.quizIndex++; renderQuiz(); }
+}
+function goToQuizQuestion(idx){
+  state.quizIndex = idx;
+  renderQuiz();
+}
+function retryQuestion(idx){
+  delete state.quizAnswers[idx];
+  const item = state.quizSession[idx];
+  item.perm = makePerm(DATA.quiz[item.qi]);   // reshuffle options on a retry
+  state.quizIndex = idx;
+  renderQuiz();
+}
+function submitQuiz(){
+  state.quizSubmitted = true;
+  state.levelDone[state.quizLevel] = true;
+  state.stage = 'results';
+  renderAll();
+  setTimeout(()=>{ fireConfetti(); fireFireworks(); }, 250);
+}
+function retakeQuiz(){
+  initQuizSession(state.quizLevel || levelsAvailable()[0] || 'medium');   // new shuffle every restart
+  state.stage = 'quiz';
+  renderAll();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ---------------- RESULTS ---------------- */
+function renderResults(){
+  const root = document.getElementById('stageQuiz');
+  const lang = state.lang;
+  const sess = state.quizSession;
+  let correct = 0;
+  sess.forEach((it,idx)=>{ const q=DATA.quiz[it.qi]; if(it.perm[state.quizAnswers[idx]]===q.correct) correct++; });
+
+  let reviewHtml = sess.map((it,idx)=>{
+    const q = DATA.quiz[it.qi];
+    const yourOrig = it.perm[state.quizAnswers[idx]];
+    const ok = yourOrig===q.correct;
+    return `<div class="review-item">
+      <div class="q">${idx+1}. ${q.q[lang]}</div>
+      <div class="${ok?'a-correct':'a-wrong'}">${ok?'✓':'✕'} ${q.options[lang][yourOrig]}</div>
+      ${!ok?`<div class="a-correct">→ ${q.options[lang][q.correct]}</div>`:''}
+    </div>`;
+  }).join('');
+
+  const multi = levelsAvailable().length>1;
+  const canAdv = multi && state.quizLevel==='medium' && !isLevelLocked('advanced');
+  root.innerHTML = `
+    <div class="results">
+      <span class="big-emoji">🎆</span>
+      <h2>${t('resultsTitle')} · ${t('levelName_'+state.quizLevel)}</h2>
+      <div class="score">${correct} / ${sess.length}</div>
+      <div class="congrats">🎉 ${t('congrats')}</div>
+      <div class="results-actions">
+        ${canAdv?`<button class="btn lotus" onclick="startQuiz('advanced')">🔥 ${t('lvTryAdv')}</button>`:''}
+        <button class="btn retake-btn" onclick="retakeQuiz()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 1 3 6.7M3 12V7m0 5h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          ${t('lvRetake')}
+        </button>
+        ${multi?`<button class="btn secondary" onclick="pickAnotherLevel()">${t('lvOther')}</button>`:''}
+      </div>
+    </div>
+    <div class="review-title">${t('reviewTitle')}</div>
+    ${reviewHtml}
+  `;
+  renderHeader();
+  renderContinueBar();
+}
+
+/* ---------------- CONTINUE BAR ---------------- */
+function renderContinueBar(){
+  const bar = document.getElementById('continueBar');
+  const status = document.getElementById('continueStatus');
+  const btn = document.getElementById('continueBtn');
+  const lang = state.lang;
+
+  if(state.stage==='read'){
+    const total = DATA.sections.length;
+    const readCount = state.readSet.size;
+    status.textContent = `${t('continueReadPrefix')} ${readCount}/${total}`;
+    btn.textContent = t('continueReadBtn');
+    btn.disabled = readCount < total;
+    btn.onclick = ()=>{ state.stage='flash'; renderAll(); window.scrollTo({top:0,behavior:'smooth'}); };
+    bar.style.display='block';
+  } else if(state.stage==='flash'){
+    const total = DATA.flashcards.length;
+    const seen = state.flashSeen.size;
+    status.textContent = `${lang==='vi'?'Đã xem':'Viewed'} ${seen}/${total}`;
+    btn.textContent = t('flashContinue');
+    btn.disabled = seen < total;
+    btn.onclick = ()=>{ state.stage='quiz'; renderAll(); window.scrollTo({top:0,behavior:'smooth'}); };
+    bar.style.display='block';
+  } else {
+    bar.style.display='none';
+  }
+}
+
+/* ---------------- CONFETTI ---------------- */
+function fireConfetti(){
+  const colors = ['#8FB988','#E8A3B0','#E7BA53','#93BEDB','#F3C9D0'];
+  const count = 90;
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const size = 6 + Math.random()*7;
+    el.style.width = size+'px';
+    el.style.height = (size*0.4 + Math.random()*size*0.6)+'px';
+    el.style.left = (Math.random()*100)+'vw';
+    el.style.background = colors[Math.floor(Math.random()*colors.length)];
+    const duration = 2.6 + Math.random()*1.8;
+    const rot = (Math.random()>0.5?1:-1) * (180+Math.random()*360);
+    el.style.setProperty('--rot', rot+'deg');
+    el.style.animationDuration = duration+'s';
+    el.style.animationDelay = (Math.random()*0.5)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(), (duration+0.6)*1000);
+  }
+}
+function fireFireworks(){
+  const colors = ['#8FB988','#E8A3B0','#E7BA53','#93BEDB','#F3C9D0','#fff'];
+  const burstCount = 5;
+  for(let b=0;b<burstCount;b++){
+    setTimeout(()=>{
+      const originX = 12 + Math.random()*76;
+      const originY = 12 + Math.random()*28;
+      const particles = 26;
+      for(let p=0;p<particles;p++){
+        const el = document.createElement('div');
+        el.className = 'spark';
+        const size = 5 + Math.random()*4;
+        el.style.width = size+'px';
+        el.style.height = size+'px';
+        el.style.left = originX+'vw';
+        el.style.top = originY+'vh';
+        el.style.background = colors[Math.floor(Math.random()*colors.length)];
+        const angle = (Math.PI*2)*(p/particles) + Math.random()*0.25;
+        const dist = 55 + Math.random()*75;
+        el.style.setProperty('--dx', (Math.cos(angle)*dist)+'px');
+        el.style.setProperty('--dy', (Math.sin(angle)*dist)+'px');
+        const dur = 0.75 + Math.random()*0.5;
+        el.style.animationDuration = dur+'s';
+        document.body.appendChild(el);
+        setTimeout(()=>el.remove(), dur*1000+120);
+      }
+    }, b*320);
+  }
+}
+
+/* ---------------- MASTER RENDER ---------------- */
+function renderAll(){
+  document.getElementById('stageRead').style.display = state.stage==='read' ? 'block':'none';
+  document.getElementById('stageFlash').style.display = state.stage==='flash' ? 'block':'none';
+  document.getElementById('stageQuiz').style.display = (state.stage==='quiz'||state.stage==='results') ? 'block':'none';
+
+  if(state.stage==='read') renderRead();
+  else if(state.stage==='flash') renderFlash();
+  else if(state.stage==='quiz') renderQuiz();
+  else if(state.stage==='results') renderResults();
+
+  renderHeader();
+  renderContinueBar();
+}
+function render(){ renderAll(); }
+
+DATA.sections.forEach(s=>{ s._open = false; });
+render();
+</script>
+</body>
+</html>
